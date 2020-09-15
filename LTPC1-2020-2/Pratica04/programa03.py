@@ -1,4 +1,3 @@
-  
 #Pede para o usuário digitar uma senha e valida ela com a senha secreta
 #Cria uma variavel para guardar a senha
 senha_secreta = '123456'
