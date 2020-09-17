@@ -32,10 +32,7 @@ maior = max(temperaturas)
 #Encontra a menor temperatura
 menor = min(temperaturas)
 
-
-
-
-
+#Mostra os resultados
 print('Temperaturas informadas: ', temperaturas)
 print("Temperatura Média: ", temperatura_media)
 print("Temperaturas acima da média: ", temperaturas_acima_da_media)
