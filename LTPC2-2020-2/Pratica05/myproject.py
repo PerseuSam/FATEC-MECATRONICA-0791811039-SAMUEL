@@ -14,7 +14,7 @@ quantidade = int(input("Quantidade de temperaturas que deseja informar: "))
 
 #Adiciona as temperaturas
 while len(temperaturas) < quantidade:
-  temperatura = float(input('Temperatura:'))
+  temperatura = float(input("Temperatura: "))
   temperaturas.append(temperatura)
 
 #Encontra a temperatura média
@@ -33,8 +33,8 @@ maior = max(temperaturas)
 menor = min(temperaturas)
 
 #Mostra os resultados
-print('Temperaturas informadas: ', temperaturas)
+print("Temperaturas informadas: ", temperaturas)
 print("Temperatura Média: ", temperatura_media)
 print("Temperaturas acima da média: ", temperaturas_acima_da_media)
-print('Maior temperatura:', maior)
-print('Menor temperatura:', menor)
+print("Maior temperatura:", maior)
+print("Menor temperatura:", menor)
