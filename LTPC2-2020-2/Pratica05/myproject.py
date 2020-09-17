@@ -17,8 +17,8 @@ for temperatura in temperaturas:
 
 #Encontrar o maior Valor
 maior = max(temperaturas)
-print('Maior valor:', maior)
+print('Maior temperatura:', maior)
 
 #Encontra o menor valor
 menor = min(temperaturas)
-print('Menor valor:', menor)
+print('Menor temperatura:', menor)
