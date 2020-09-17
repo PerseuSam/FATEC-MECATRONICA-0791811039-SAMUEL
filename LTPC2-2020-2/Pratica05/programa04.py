@@ -22,4 +22,4 @@ while len(lista_2) < quantidade_na_lista_2:
 
 #Junta a lista_1 com a lista_2
 lista_3 = lista_1 + lista_2
-print(lista_3)
+print("Valores da lista: ", lista_3)
