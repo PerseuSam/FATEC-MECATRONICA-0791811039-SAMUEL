@@ -3,7 +3,7 @@ temperaturas = []
 quantidade = int(input("Quantidade de temperaturas que deseja informar: "))
 
 while len(temperaturas) < quantidade:
-  temperatura = int(input('Temperatura:'))
+  temperatura = float(input('Temperatura:'))
   temperaturas.append(temperatura)
 
 print('Temperaturas informadas: ', temperaturas)
