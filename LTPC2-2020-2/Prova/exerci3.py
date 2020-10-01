@@ -3,14 +3,14 @@ temperaturas = []
 continuar = True
 
 while continuar == True:
-  temperatura = int(input("Temperatura que deseja informar:"))
+  temperatura = int(input("Temperatura que deseja informar: "))
   temperaturas.append(temperatura)
-  if input('Deseja continuar (s/n)?') == 's':
+  if input("Deseja continuar (s/n)? ") == 's':
     continuar = True
   else:
     continuar = False
 
-valor_limiar = int(input("Digite um valor limiar: "))
+valor_limiar = int(input("Digite um valor limiar(média): "))
 
 acima_da_media = []
 for temperatura in temperaturas:
