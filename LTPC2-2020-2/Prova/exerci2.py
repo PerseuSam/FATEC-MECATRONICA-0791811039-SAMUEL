@@ -1,4 +1,4 @@
-def exibirStatusLista(lista):
+def ValoresAcimaDaMedia(lista):
   for valor in valores:
     if valor > valor_medio:
      acima_da_media.append(valor)
@@ -12,7 +12,7 @@ while len(valores) < quantidade:
   valores.append(valor)
 
 valor_medio = sum(valores) / len(valores)
-exibirStatusLista(valores)
+ValoresAcimaDaMedia(valores)
 
 print("Média: ", valor_medio)
 print("Valores informados: ", sorted(valores))
