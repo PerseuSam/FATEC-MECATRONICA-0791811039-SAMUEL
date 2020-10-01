@@ -28,7 +28,8 @@ elif percentual >=70 and percentual <100:
 else:
   print("Sem problemas aqui")
 
-print("Temperaturas: ", temperaturas)
+
+print("Temperaturas: ", sorted(temperaturas))
 print("Valor Limiar: ", valor_limiar)
-print("Acima da média: ", acima_da_media)
+print("Acima da média: ", sorted(acima_da_media))
 print("Percentual: ", percentual)
