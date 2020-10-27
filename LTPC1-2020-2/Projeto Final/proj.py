@@ -33,9 +33,8 @@ while programa:
 
         senha = input("Digite uma senha: ")
 
-        ID = len(Usuarios) + 1
-
         cliente = []
+        ID = len(Usuarios) + 1
         cliente.append(" ".join(nome_completo))
         cliente.append(e_mail)
         cliente.append(senha)
@@ -61,8 +60,4 @@ while programa:
 
     else:
       print("Opção inválida, tente novamente")
-
-  
-
-
-
+      
