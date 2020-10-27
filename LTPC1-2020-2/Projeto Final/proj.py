@@ -2,7 +2,7 @@
 
 Usuarios = {"1":["Carlos Augusto", "augusto.carlos@gmail.com", "2358"], "2":["Ana Carolina", "ana.carlo@gmail.com", "6752"], "3":["Igor Moraes", "imoraes.raes@gmail.com", "1374"]}
 
-Conta = {[]}
+Contas = {"1":[1000], "2":[250], "3":[3000]} ##Colocar aqui os valores nas contas das pessoas
 
 print("Olá")
 print("Em que posso ajudá-lo hoje?")
@@ -23,7 +23,7 @@ while programa:
       continuar_2 = True
       while continuar_2:
 
-        nome_completo = (input("Vamos começar pelo seu nome, qual seu nome completo? ").title()).split()
+        nome_completo = (input("\nVamos começar pelo seu nome, qual seu nome completo? ").title()).split()
         print("Olá", nome_completo[0].title())
 
         e_mail = input("Agora digite seu e-mail: ")
@@ -37,12 +37,18 @@ while programa:
         cliente.append(" ".join(nome_completo))
         cliente.append(e_mail)
         cliente.append(senha)
+        valor = input("Insira um valor inicial: ")
         Usuarios[ID] = cliente
+        Contas[ID] = valor 
+        print("\nUsuários")
+        print("----------------------------------------------------------------------------")
         print(Usuarios)
-
+        print("\nContas")
+        print("----------------------------------------------------------------------------")
+        print(Contas)
          #print(" ".join(nome_completo)) #QAUNDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
 
-        continuar_2  = input("Adicionar mais algúem? (s/n)") == "s"
+        continuar_2  = input("\nAdicionar mais algúem? (s/n)") == "s"
       continuar_1 = False
 
     elif opcao == "2":
