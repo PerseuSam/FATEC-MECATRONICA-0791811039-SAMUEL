@@ -20,12 +20,21 @@ while continuar:
     print("Opção inválida, tente novamente")
 
 #Opção 1
-nome_completo = input("Vamos começar pelo seu nome, qual seu nome completo? ").split()
+
+cliente = []
+
+nome_completo = (input("Vamos começar pelo seu nome, qual seu nome completo? ").title()).split()
 print("Olá", nome_completo[0].title())
 
-mail = input("Agora digite seu e-mail: ")
+e_mail = input("Agora digite seu e-mail: ")
 
 print("Estamos quase lá")
 
-senha_0 = input("Digite uma senha: ")
+senha = input("Digite uma senha: ")
+
+cliente.append(nome_completo)
+cliente.append(e_mail)
+cliente.append(senha)
+
+print(cliente) #print(" ".join(nome_completo)) #QAUNDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
 
