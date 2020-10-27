@@ -21,7 +21,7 @@ while continuar:
 
 #Opção 1
 nome_completo = input("Vamos começar pelo seu nome, qual seu nome completo? ").split()
-print("Olá", nome_completo[0],)
+print("Olá", nome_completo[0].title())
 
 mail = input("Agora digite seu e-mail: ")
 
