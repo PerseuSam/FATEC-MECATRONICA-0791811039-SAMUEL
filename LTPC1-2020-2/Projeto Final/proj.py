@@ -63,7 +63,22 @@ while programa:
     else:
       print("Opção inválida, tente novamente")
 
+  ##Transações começa aqui 
+
+  nome_completo = input("Digite seu nome completo: ").title()
+  senha = input("Digite sua senha: ")
+
+  if nome_completo in Usuarios.keys:
+    if senha in Usuarios.keys:
+        print("Escolha a operação")
+        print("Para Pagamento - Digite P") 
+        print("Para Recebimento - Digite R")
+
+        opercao = 0
+        operacao = input("Operação: ").upper()
+
+
+  print("Nome ou senha incorretos")
+
+
   
-
-
-
