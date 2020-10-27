@@ -1,12 +1,11 @@
 #Inicializção
-#Criar usuários com Nome, e-mail, senha - ID e Saldo
-clientes = [] #Tentar fazer isso com dicionário
 
 Usuarios = {"1":["Carlos Augusto", "augusto.carlos@gmail.com", "2358"], "2":["Ana Carolina", "ana.carlo@gmail.com", "6752"], "3":["Igor Moraes", "imoraes.raes@gmail.com", "1374"]}
 
+Conta = {[]}
 
 print("Olá")
-print("O que deseja hoje?")
+print("Em que posso ajudá-lo hoje?")
 
 programa = True
 while programa:
@@ -44,9 +43,6 @@ while programa:
          #print(" ".join(nome_completo)) #QAUNDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
 
         continuar_2  = input("Adicionar mais algúem? (s/n)") == "s"
-
-      print(clientes) ##Temporário
-      print("tudo certo") ##Temporário
       continuar_1 = False
 
     elif opcao == "2":
@@ -60,4 +56,8 @@ while programa:
 
     else:
       print("Opção inválida, tente novamente")
-      
+
+  
+
+
+
