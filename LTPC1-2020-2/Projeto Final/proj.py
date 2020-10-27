@@ -1,6 +1,9 @@
 #Inicializção
-
+#Criar usuários com Nome, e-mail, senha - ID e Saldo
 clientes = [] #Tentar fazer isso com dicionário
+
+Usuarios = {"1":["Carlos Augusto", "augusto.carlos@gmail.com", "2358"], "2":["Ana Carolina", "ana.carlo@gmail.com", "6752"], "3":["Igor Moraes", "imoraes.raes@gmail.com", "1374"]}
+
 
 print("Olá")
 print("O que deseja hoje?")
@@ -20,7 +23,6 @@ while programa:
     if opcao == "1":
       continuar_2 = True
       while continuar_2:
-        cliente = [] 
 
         nome_completo = (input("Vamos começar pelo seu nome, qual seu nome completo? ").title()).split()
         print("Olá", nome_completo[0].title())
@@ -31,12 +33,16 @@ while programa:
 
         senha = input("Digite uma senha: ")
 
-        cliente.append(nome_completo)
+        ID = len(Usuarios) + 1
+
+        cliente = []
+        cliente.append(" ".join(nome_completo))
         cliente.append(e_mail)
         cliente.append(senha)
+        Usuarios[ID] = cliente
+        print(Usuarios)
 
-        print(cliente) #print(" ".join(nome_completo)) #QAUNDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
-        clientes.append(cliente)
+         #print(" ".join(nome_completo)) #QAUNDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
 
         continuar_2  = input("Adicionar mais algúem? (s/n)") == "s"
 
@@ -55,3 +61,8 @@ while programa:
 
     else:
       print("Opção inválida, tente novamente")
+
+  
+
+
+
