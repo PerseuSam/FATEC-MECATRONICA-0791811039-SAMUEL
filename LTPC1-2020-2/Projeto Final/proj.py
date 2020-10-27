@@ -75,11 +75,12 @@ while programa:
 
     ##Transações começa aqui
 
-    print(Usuarios)
+    nome_completo = input("Digite seu nome completo: ").title()
     senha = input("Digite sua senha: ")
-    if senha in Usuarios:
+    for categoria in Usuarios.keys(): ##Ok
+      if nome_completo in Usuarios.keys():
         print("senhas iguais, acesso liberado")
 
-    nome_completo = input("Digite seu nome completo: ").title()
+      
 
 
