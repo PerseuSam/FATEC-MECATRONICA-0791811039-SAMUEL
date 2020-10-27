@@ -5,36 +5,43 @@ print("O que deseja hoje?")
 print("Para adicionar usuário - Digite 1 ")
 print("Para realizar transação - Digite 2")
 
-continuar = True
+continuar_1 = True
 opcao = 0
 
-while continuar:
+while continuar_1:
   opcao = input("Opção: ")
   if opcao == "1":
     print("Vamos lá")
-    continuar = False
+    continuar_1 = False
   elif opcao == "2":
     print("entrando")
-    continuar = False
+    continuar_1 = False
   else:
     print("Opção inválida, tente novamente")
 
 #Opção 1
 
-cliente = []
+continuar_2 = True
 
-nome_completo = (input("Vamos começar pelo seu nome, qual seu nome completo? ").title()).split()
-print("Olá", nome_completo[0].title())
+while continuar_2:
+  cliente = [] #Quando vai repetir, ele apaga os dados do antigo usuário
 
-e_mail = input("Agora digite seu e-mail: ")
+  nome_completo = (input("Vamos começar pelo seu nome, qual seu nome completo? ").title()).split()
+  print("Olá", nome_completo[0].title())
 
-print("Estamos quase lá")
+  e_mail = input("Agora digite seu e-mail: ")
 
-senha = input("Digite uma senha: ")
+  print("Estamos quase lá")
 
-cliente.append(nome_completo)
-cliente.append(e_mail)
-cliente.append(senha)
+  senha = input("Digite uma senha: ")
 
-print(cliente) #print(" ".join(nome_completo)) #QAUNDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
+  cliente.append(nome_completo)
+  cliente.append(e_mail)
+  cliente.append(senha)
 
+  print(cliente) #print(" ".join(nome_completo)) #QAUNDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
+
+  continuar_2  = input("Adicionar mais algúem? (s/n)") == "s"
+
+
+print("tudo certo")
