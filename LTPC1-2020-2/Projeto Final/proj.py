@@ -1,47 +1,55 @@
 #Inicializção
 
+clientes = [] #Tentar fazer isso com dicionário
+
 print("Olá")
 print("O que deseja hoje?")
-print("Para adicionar usuário - Digite 1 ")
-print("Para realizar transação - Digite 2")
 
-continuar_1 = True
-opcao = 0
+while 1:
 
-while continuar_1:
-  opcao = input("Opção: ")
-  if opcao == "1":
-    print("Vamos lá")
-    continuar_1 = False
-  elif opcao == "2":
-    print("entrando")
-    continuar_1 = False
-  else:
-    print("Opção inválida, tente novamente")
+  print("Para adicionar usuário - Digite 1 ")
+  print("Para realizar transação - Digite 2")
 
-#Opção 1
+  continuar_1 = True
+  opcao = 0
 
-continuar_2 = True
+  while continuar_1:
+    opcao = input("Opção: ")
+    if opcao == "1":
+      print("Vamos lá")
+      continuar_1 = False
+    elif opcao == "2":
+      print("entrando")
+      continuar_1 = False
+    else:
+      print("Opção inválida, tente novamente")
 
-while continuar_2:
-  cliente = [] #Quando vai repetir, ele apaga os dados do antigo usuário
+  #Opção 1
 
-  nome_completo = (input("Vamos começar pelo seu nome, qual seu nome completo? ").title()).split()
-  print("Olá", nome_completo[0].title())
+  continuar_2 = True
 
-  e_mail = input("Agora digite seu e-mail: ")
+  while continuar_2:
+    cliente = [] 
 
-  print("Estamos quase lá")
+    nome_completo = (input("Vamos começar pelo seu nome, qual seu nome completo? ").title()).split()
+    print("Olá", nome_completo[0].title())
 
-  senha = input("Digite uma senha: ")
+    e_mail = input("Agora digite seu e-mail: ")
 
-  cliente.append(nome_completo)
-  cliente.append(e_mail)
-  cliente.append(senha)
+    print("Estamos quase lá")
 
-  print(cliente) #print(" ".join(nome_completo)) #QAUNDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
+    senha = input("Digite uma senha: ")
 
-  continuar_2  = input("Adicionar mais algúem? (s/n)") == "s"
+    cliente.append(nome_completo)
+    cliente.append(e_mail)
+    cliente.append(senha)
+
+    print(cliente) #print(" ".join(nome_completo)) #QAUNDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
+    clientes.append(cliente)
+
+    continuar_2  = input("Adicionar mais algúem? (s/n)") == "s"
+
+  print(clientes) ##Temporário
+  print("tudo certo") ##Temporário
 
 
-print("tudo certo")
