@@ -67,9 +67,9 @@ while programa:
 
 
   print(Usuarios)
-  nome_completo = input("Digite seu nome completo: ").title()
-  print(nome_completo)
   senha = input("Digite sua senha: ")
+  if senha in Usuarios:
+    print("senhas iguais, acesso liberado")
 
-
-
+  nome_completo = input("Digite seu nome completo: ").title()
+ 
