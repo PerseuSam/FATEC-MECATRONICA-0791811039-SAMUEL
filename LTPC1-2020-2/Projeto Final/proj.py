@@ -1,15 +1,15 @@
 #Inicializção
 
 Usuarios = {
-    "1": ["Carlos Augusto", "augusto.carlos@gmail.com", "2358"],
-    "2": ["Ana Carolina", "ana.carlo@gmail.com", "6752"],
-    "3": ["Igor Moraes", "imoraes.raes@gmail.com", "1374"]
+    1: ["Carlos Augusto", "augusto.carlos@gmail.com", "2358"],
+    2: ["Ana Carolina", "ana.carlo@gmail.com", "6752"],
+    3: ["Igor Moraes", "imoraes.raes@gmail.com", "1374"]
 }
 
 Contas = {
-    "1": 1000,
-    "2": 250,
-    "3": 3000
+    1: "1000",
+    2: "250",
+    3: "3000"
 }  ##Colocar aqui os valores nas contas das pessoas
 
 print("Olá")
@@ -56,7 +56,7 @@ while programa:
                 print("\nContas")
                 print("----------------------------------------------------------------------------")
                 print(Contas)
-                #print(" ".join(nome_completo)) #QAUNDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
+                #print(" ".join(nome_completo)) #QUANDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
 
                 continuar_2 = input("\nAdicionar mais algúem? (s/n)") == "s"
             continuar_1 = False
@@ -77,10 +77,5 @@ while programa:
 
     nome_completo = input("Digite seu nome completo: ").title()
     senha = input("Digite sua senha: ")
-    for categoria in Usuarios.keys(): ##Ok
-      if nome_completo in Usuarios.keys():
-        print("senhas iguais, acesso liberado")
-
-      
-
-
+    if nome_completo in Usuarios[ID]:
+      print("senhas iguais, acesso liberado")
