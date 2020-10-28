@@ -3,7 +3,6 @@ usuarios = {"1":["Carlos Augusto", "augusto.carlos@gmail.com", "2358"], "2":["An
 contas = {"1":[1000], "2":[250], "3":[3000]}
 
 import random
-print(random.randrange(1000, 9999))
 
 
 
@@ -12,16 +11,23 @@ print("Olá")
 codigo = input("Para gerar o código - Digite QR: ").upper()
 
 if codigo == "QR":
-  nome = input("Insira seu nome: ")
+  nome = input("Insira seu nome: ").title()
   valor = int(input("Insira o valor: "))
   ID = int(input("Seu ID: "))
-
-  print("QR Code: ", ID, ";", nome, ";", valor, ";", (random.randrange(1000, 9999)))
+  aleatorio = (random.randrange(1000, 9999))
+  
+  memoria = []
+  memoria.append(nome)
+  memoria.append(valor)
+  memoria.append(ID)
+  memoria.append(aleatorio)
+  print("QR Code: ", ID, ";", nome, ";", valor, ";", aleatorio)
+  print(memoria)
 else:
   print("deu ruim")
 
-#Para pagar
 
+#Para pagar
 
 print("Olá")
 usuario = input("informe o usuário: ").title()
