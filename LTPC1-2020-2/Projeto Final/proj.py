@@ -1,9 +1,9 @@
 #Inicializção
 
 Usuarios = {
-    1: ["Carlos Augusto", "augusto.carlos@gmail.com", "2358"],
-    2: ["Ana Carolina", "ana.carlo@gmail.com", "6752"],
-    3: ["Igor Moraes", "imoraes.raes@gmail.com", "1374"]
+    "1": ["Carlos Augusto", "augusto.carlos@gmail.com", "2358"],
+    "2": ["Ana Carolina", "ana.carlo@gmail.com", "6752"],
+    "3": ["Igor Moraes", "imoraes.raes@gmail.com", "1374"]
 }
 
 Contas = {
@@ -77,5 +77,6 @@ while programa:
 
     nome_completo = input("Digite seu nome completo: ").title()
     senha = input("Digite sua senha: ")
-    if nome_completo in Usuarios[ID]:
-      print("senhas iguais, acesso liberado")
+    for nome_completo in Usuarios.keys():
+      if Usuarios.keys() in "1":
+        print("senhas iguais, acesso liberado")
