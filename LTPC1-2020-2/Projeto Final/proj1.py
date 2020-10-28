@@ -1,9 +1,9 @@
-usuarios = [["Carlos Augusto", "augusto.carlos@gmail.com", "2358"], ["Ana Carolina", "ana.carlo@gmail.com", "6752"], ["Igor Moraes", "imoraes.raes@gmail.com", "1374"]]
+usuarios = {"1":["Carlos Augusto", "augusto.carlos@gmail.com", "2358"], "2":["Ana Carolina", "ana.carlo@gmail.com", "6752"], "3":["Igor Moraes", "imoraes.raes@gmail.com", "1374"]}
 
+contas = {"1":[1000], "2":[250], "3":[3000]}
 
-contas = [[1000], [250], [3000]]
-
-
+import random
+print(random.randrange(1000, 9999))
 
 
 
@@ -13,13 +13,15 @@ codigo = input("Para gerar o código - Digite QR: ").upper()
 
 if codigo == "QR":
   nome = input("Insira seu nome: ")
-  valor = ("Insira o valor: ")
-  
+  valor = int(input("Insira o valor: "))
+  ID = int(input("Seu ID: "))
 
-  print("5;PERIGO;1;1234")
-
+  print("QR Code: ", ID, ";", nome, ";", valor, ";", (random.randrange(1000, 9999)))
+else:
+  print("deu ruim")
 
 #Para pagar
+
 
 print("Olá")
 usuario = input("informe o usuário: ").title()
