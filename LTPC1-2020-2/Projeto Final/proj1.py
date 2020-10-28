@@ -1,3 +1,24 @@
+#usuario (RELACIONAR O ID COM O USUARIO)
+#valor "OK"
+#string do qr code
+
+usuarios = {1:["Carlos Augusto", "augusto.carlos@gmail.com", "2358"], 2:["Ana Carolina", "ana.carlo@gmail.com", "6752"], 3:["Igor Moraes", "imoraes.raes@gmail.com", "1374"]}
+
+nome_completo = input("Insira seu nome: ").title()
+
+for nome_completo in usuarios.keys():
+  if nome_completo in []:
+    print([])
+  else:
+    print("vc é incrivel, mas ainda está errado :( ")
+
+
+
+
+
+print("------------------------------------------")
+
+
 ##BOM, NÃO MEXER
 
 contas = {1:1000, 2:250, 3:3000}
@@ -10,17 +31,14 @@ if ID in contas.keys():
   contas[ID] += dinheiro
   print(contas)
 else:
-  #Uma nova categoria vaio ser cadastrada
-  contas[ID] = dinheiro
-  print(contas)
+  #Categoria não existe
+  print("essa conta não existe")
+
 
 
 
 
 ##BOM, NÃO MEXER
-usuarios = {"1":["Carlos Augusto", "augusto.carlos@gmail.com", "2358"], "2":["Ana Carolina", "ana.carlo@gmail.com", "6752"], "3":["Igor Moraes", "imoraes.raes@gmail.com", "1374"]}
-
-
 
 #Para receber  #“5;PERIGO;1;1234”
 print("Olá")
