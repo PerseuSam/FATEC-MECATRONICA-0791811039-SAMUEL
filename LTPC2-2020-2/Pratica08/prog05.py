@@ -18,15 +18,18 @@ while continuar:
 
 print("Porcentagens Relativas:")
 
+memoria = 0
+
 for categoria in personagens.keys():
   porcentagem = (len(personagens[categoria])/len(personagens))*100
   print("Categoria:", categoria, " - ", porcentagem)
   if porcentagem == 25:
-    print("equipe balanceada")
-  else:
-    print("equipe desbalanceada")
-
-
+    memoria += 1
+   
+if memoria == 4:
+  print("\nEquipe Balanceada")
+else:
+  print("\nEquipe Desbalanceada")
 
 print("\nPersonagens:")
 for categoria in personagens.keys():
