@@ -7,9 +7,9 @@ Usuarios = {
 }
 
 Contas = {
-    1: "1000",
-    2: "250",
-    3: "3000"
+    1: [1000],
+    2: [250],
+    3: [3000]
 }  ##Colocar aqui os valores nas contas das pessoas
 
 print("Olá")
@@ -47,7 +47,7 @@ while programa:
                 cliente.append(" ".join(nome_completo))
                 cliente.append(e_mail)
                 cliente.append(senha)
-                valor = input("Insira um valor inicial: ")
+                valor = [int(input("Insira um valor inicial: "))]
                 Usuarios[ID] = cliente
                 Contas[ID] = valor
                 print("\nUsuários")
