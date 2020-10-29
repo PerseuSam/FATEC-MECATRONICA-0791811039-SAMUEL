@@ -26,6 +26,20 @@ while repetir:
 
 print("deu bom")#não mostra para o usuário
 
+print("Para realizar pagamento - Digite 'P'")
+print("Para receber - Digite 'R'")
+
+escolha = 0
+escolha = input("Opção: ").upper()
+if escolha == "P":
+  print("Vc escolheu P")#(CASO 1)
+else:
+  print("Vc escolheu R")#(CASO 2)
+
+
+
+
+
 #------------------------AQUI É PARA PAGAR (CASO 1)---------------------------------------------
 #CORRIGIR POSSIVEIS DEFEITOS
 #TENTAR FAZER ISSO UMA FUNÇÃO (def) PARA QUE SEJA DECIDIDO QUAL DELAS IR ATRAVÉS DE UM "if"
