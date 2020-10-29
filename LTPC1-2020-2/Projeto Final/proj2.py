@@ -3,6 +3,7 @@ e_mails = ["ju@gmail", "davi@gmail", "ego@gmail"]
 senhas = ["1234", "2345", "3456"]
 saldo = [1000, 250, 3000]
 
+#ACESSO
 
 repetir = True
 while repetir:
@@ -25,17 +26,28 @@ while repetir:
 
 print("deu bom")#não mostra para o usuário
 
-um_nome = input("QR Code aqui, nome: ").title()
-recebedor= nomes.index(um_nome)
+#AQUI É PARA PAGAR
+#IMPEDIR QUE O USUSÁRIO TRANSFIRA DINHEIRO PRA ELE MESMO
 
-print(saldo)#não mostra para o usuário
-valor = int(input("Digite um valor: "))
+malandragem = True
+while malandragem:
+  pagador = input("QR Code aqui, nome: ").title()
+  if pagador == um_nome:
+    print("Impossivel pagar para si mesmo")
+    #COLOCAR OPÇÃO SAIR
+  else:
+    recebedor= nomes.index(pagador)
+    print(saldo)#não mostra para o usuário
+    valor = int(input("Digite um valor: "))
 
-if (saldo[ID] - valor) >= 0:
-  saldo[ID] -= valor
-  saldo[recebedor] += valor
-  print(saldo[ID])
-  print(saldo)#não mostra para o usuário
-else:
-  print("saldo insuficiente")
-  print("Seu saldo é de: ", "R$ ",saldo[ID])
+    if (saldo[ID] - valor) >= 0:
+      saldo[ID] -= valor
+      saldo[recebedor] += valor
+      print("Transação efetuada\n", "Seu saldo atual é: R$", saldo[ID])
+      print(saldo)#não mostra para o usuário
+      malandragem = False
+    else:
+      print("saldo insuficiente")
+      print("Seu saldo é de: ", "R$ ",saldo[ID])
+      #COLOCAR OPÇÃO SAIR E OPÇÃO REPETIR COM OUTRO VALOR
+      malandragem = False
