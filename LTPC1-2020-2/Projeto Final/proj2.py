@@ -75,6 +75,8 @@ while repetir:
     print("Senha ou nome incorreto")
     print("Tente novamente\n")
 
+#------------------------ ESCOLHA ENTRE PAGAR OU RECEBER(GERAR QR CODE) -----------------------
+
   RP = True
   while RP:
     print("Para realizar pagamento - Digite 'P'")
