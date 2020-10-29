@@ -1,13 +1,13 @@
 nomes = ["Julia", "Davi", "Diego"]
 e_mails = ["ju@gmail", "davi@gmail", "ego@gmail"]
-senhas = ["2312", "4782", "3572"]
-saldo = [1000, 250, 3000]
+senhas = ["1234", "2345", "3456"]
+saldo = [1000.00, 250.00, 3000.00]
 
 
 repetir = True
 while repetir:
 
-  um_nome = input("Coloque seu nome: ")
+  um_nome = input("Coloque seu nome: ").title()
   senha = input("Coloque sua senha: ")
 
   if um_nome in nomes:
@@ -25,7 +25,15 @@ while repetir:
 
 print("deu bom")
 
+um_nome = input("QR Code aqui, nome: ")
+recebedor= nomes.index(um_nome)
+
 print(saldo)
 valor = int(input("Digite um valor: "))
-saldo[ID] += valor
-print(saldo)
+
+if (saldo[ID] - valor) > 0:
+  saldo[ID] -= valor
+  saldo[recebedor] += valor
+  print(saldo)
+else:
+  print("saldo insuficiente")
