@@ -26,15 +26,22 @@ while repetir:
 
 print("deu bom")#não mostra para o usuário
 
-print("Para realizar pagamento - Digite 'P'")
-print("Para receber - Digite 'R'")
+RP = True
+while RP:
+  print("Para realizar pagamento - Digite 'P'")
+  print("Para receber - Digite 'R'")
+  escolha = 0
+  escolha = input("Opção: ").upper()
 
-escolha = 0
-escolha = input("Opção: ").upper()
-if escolha == "P":
-  print("Vc escolheu P")#(CASO 1)
-else:
-  print("Vc escolheu R")#(CASO 2)
+  if escolha == "P":
+    print("Vc escolheu P")#(CASO 1)      APAGAR
+    RP = False
+  elif escolha == "R":
+    print("Vc escolheu R")#(CASO 2)      APAGAR
+    RP = False
+  else:
+    print("Opção inválida")
+    print("Tente Novamente")
 
 
 
