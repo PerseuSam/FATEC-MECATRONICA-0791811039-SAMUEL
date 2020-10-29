@@ -1,4 +1,4 @@
-nomes = ["Julia", "Davi", "Diego"]
+usuarios = ["Julia", "Davi", "Diego"]
 e_mails = ["ju@gmail", "davi@gmail", "ego@gmail"]
 senhas = ["2312", "4782", "3572"]
 
@@ -9,11 +9,11 @@ while repetir:
   um_nome = input("Coloque seu nome: ")
   senha = input("Coloque sua senha: ")
 
-  ID = nomes.index(um_nome) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
+  ID = usuarios.index(um_nome) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
   print(ID)
 
 
-  if um_nome in nomes:
+  if um_nome in usuarios:
     if senha in senhas[ID]:
       print("Acesso autorizado")
       repetir = False
