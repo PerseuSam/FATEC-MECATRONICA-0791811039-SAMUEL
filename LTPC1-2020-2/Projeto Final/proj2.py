@@ -66,3 +66,4 @@ import random
 n_aleatorio = (random.randrange(1000, 9999))
 
 print("Seu QR Code é:", ID,";", um_nome.upper(),";", valor,";", n_aleatorio)
+
