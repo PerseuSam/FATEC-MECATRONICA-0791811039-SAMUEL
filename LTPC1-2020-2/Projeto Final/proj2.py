@@ -13,7 +13,7 @@ while repetir:
   if um_nome in nomes:
     ID = nomes.index(um_nome) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
     print(ID)#não mostra para o usuário
-    if senha in senhas[ID]:#CORRIGIR
+    if senha in senhas[ID]:#CORRIGIR, se eu aperto "enter" na senha, ele aparece "Acesso autorizado"
       print("Acesso autorizado")
       repetir = False
     else:
@@ -25,7 +25,7 @@ while repetir:
 
 print("deu bom")#não mostra para o usuário
 
-um_nome = input("QR Code aqui, nome: ")
+um_nome = input("QR Code aqui, nome: ").title()
 recebedor= nomes.index(um_nome)
 
 print(saldo)#não mostra para o usuário
