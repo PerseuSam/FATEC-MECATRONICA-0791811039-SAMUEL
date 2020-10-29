@@ -26,7 +26,7 @@ while repetir:
 
 print("deu bom")#não mostra para o usuário
 
-#AQUI É PARA PAGAR
+#------------------------AQUI É PARA PAGAR (CASO 1)---------------------------------------------
 #CORRIGIR POSSIVEIS DEFEITOS
 #TENTAR FAZER ISSO UMA FUNÇÃO (def) PARA QUE SEJA DECIDIDO QUAL DELAS IR ATRAVÉS DE UM "if"
  
@@ -54,16 +54,15 @@ while malandragem:
       malandragem = False
 
 
-#AQUI É PARA RECEBER (GERAR QR CODE)
+#----------------------------AQUI É PARA RECEBER (GERAR QR CODE) (CASO 2)--------------------
 #CORRIGIR POSSIVEIS DEFEITOS
 #TENTAR FAZER ISSO UMA FUNÇÃO (def) PARA QUE SEJA DECIDIDO QUAL DELAS IR ATRAVÉS DE UM "if"
+#GERAR AQUI A CHAVE, O QR CODE "5;PERIGO;1;1234"
 
+ID = nomes.index(um_nome)
+um_nome.upper()
+valor = int(input("Gerar Qr Code de qual valor? "))
+import random
+n_aleatorio = (random.randrange(1000, 9999))
 
-
-
-
-
-
-
-
-
+print("Seu QR Code é:", ID,";", um_nome.upper(),";", valor,";", n_aleatorio)
