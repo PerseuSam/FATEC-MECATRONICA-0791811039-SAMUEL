@@ -1,6 +1,7 @@
 nomes = ["Julia", "Davi", "Diego"]
 e_mails = ["ju@gmail", "davi@gmail", "ego@gmail"]
 senhas = ["2312", "4782", "3572"]
+saldo = [1000, 250, 3000]
 
 
 repetir = True
@@ -22,5 +23,9 @@ while repetir:
     print("Senha ou nome incorreto")
     print("Tente novamente\n")
 
-print("Adeus, deu bom")
+print("deu bom")
 
+print(saldo)
+valor = int(input("Digite um valor: "))
+saldo[ID] += valor
+print(saldo)
