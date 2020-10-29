@@ -69,7 +69,7 @@ while repetir:
       print("Acesso autorizado")
       repetir = False
     else:
-      print("Senha ou nome incorreto")
+      print("Senha ou nome incorreto") #CORRIGIR: se eu erro o nome ou a senha, ele continua indo para a próxima etapa
       print("Tente novamente\n")
   else:
     print("Senha ou nome incorreto")
