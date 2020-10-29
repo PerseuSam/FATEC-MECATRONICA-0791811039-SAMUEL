@@ -27,8 +27,9 @@ while repetir:
 print("deu bom")#não mostra para o usuário
 
 #AQUI É PARA PAGAR
-#IMPEDIR QUE O USUSÁRIO TRANSFIRA DINHEIRO PRA ELE MESMO
-
+#CORRIGIR POSSIVEIS DEFEITOS
+#TENTAR FAZER ISSO UMA FUNÇÃO (def) PARA QUE SEJA DECIDIDO QUAL DELAS IR ATRAVÉS DE UM "if"
+ 
 malandragem = True
 while malandragem:
   pagador = input("QR Code aqui, nome: ").title()
@@ -51,3 +52,18 @@ while malandragem:
       print("Seu saldo é de: ", "R$ ",saldo[ID])
       #COLOCAR OPÇÃO SAIR E OPÇÃO REPETIR COM OUTRO VALOR
       malandragem = False
+
+
+#AQUI É PARA RECEBER (GERAR QR CODE)
+#CORRIGIR POSSIVEIS DEFEITOS
+#TENTAR FAZER ISSO UMA FUNÇÃO (def) PARA QUE SEJA DECIDIDO QUAL DELAS IR ATRAVÉS DE UM "if"
+
+
+
+
+
+
+
+
+
+
