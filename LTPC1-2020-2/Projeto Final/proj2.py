@@ -69,7 +69,7 @@ while repetir:
       print("Acesso autorizado")
       repetir = False
     else:
-      print("Senha ou nome incorreto") #CORRIGIR: se eu erro o nome ou a senha, ele continua indo para a próxima etapa
+      print("Senha ou nome incorreto") 
       print("Tente novamente\n")
   else:
     print("Senha ou nome incorreto")
@@ -77,24 +77,24 @@ while repetir:
 
 #------------------------ ESCOLHA ENTRE PAGAR OU RECEBER(GERAR QR CODE) -----------------------
 
-  RP = True
-  while RP:
-    print("Para realizar pagamento - Digite 'P'")
-    print("Para receber - Digite 'R'")
-    escolha = 0
-    escolha = input("Opção: ").upper()
+RP = True
+while RP:
+  print("Para realizar pagamento - Digite 'P'")
+  print("Para receber - Digite 'R'")
+  escolha = 0
+  escolha = input("Opção: ").upper()
 
-    if escolha == "P":
-      RP = False
-      print("Vc escolheu P")#(CASO 1)      #APAGAR
-      pagar()
-    elif escolha == "R":
-      RP = False
-      print("Vc escolheu R")#(CASO 2)      #APAGAR
-      receber()
-    else:
-      print("Opção inválida")
-      print("Tente Novamente")
+  if escolha == "P":
+    RP = False
+    print("Vc escolheu P")#(CASO 1)      #APAGAR
+    pagar()
+  elif escolha == "R":
+    RP = False
+    print("Vc escolheu R")#(CASO 2)      #APAGAR
+    receber()
+  else:
+    print("Opção inválida")
+    print("Tente Novamente")
 
 
 
