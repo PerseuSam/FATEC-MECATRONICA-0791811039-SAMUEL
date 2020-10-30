@@ -103,31 +103,32 @@ senhas = ["1234", "2345", "3456"]
 saldo = [1000, 250, 3000]
 
 #------------------------------------------ ACESSO --------------------------------------------
+while (1): #Looping infinito
+  repetir = True
+  while repetir:
+    print("Login")
+    nome_completo = input("Coloque seu nome completo: ").title()
+    senha = input("Coloque sua senha: ")
 
-repetir = True
-while repetir:
-  print("Login")
-  nome_completo = input("Coloque seu nome completo: ").title()
-  senha = input("Coloque sua senha: ")
-
-  if nome_completo in nomes:
-    ID = nomes.index(nome_completo) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
-    if senha in senhas[ID]:#CORRIGIR, se eu aperto "enter" na senha, ele aparece "Acesso autorizado"
-      print("Acesso autorizado")
-      primeiro_nome = nome_completo.split()
+    if nome_completo in nomes:
+      ID = nomes.index(nome_completo) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
+      if senha in senhas[ID]:#CORRIGIR, se eu aperto "enter" na senha, ele aparece "Acesso autorizado"
+        print("Acesso autorizado")
+        primeiro_nome = nome_completo.split()
+        repetir = False
+      else:
+        print("Senha ou nome incorreto") 
+        print("Tente novamente\n")
     else:
-      print("Senha ou nome incorreto") 
+      print("Senha ou nome incorreto")
       print("Tente novamente\n")
-  else:
-    print("Senha ou nome incorreto")
-    print("Tente novamente\n")
-  #------------------------ ESCOLHA ENTRE PAGAR OU RECEBER(GERAR QR CODE) -----------------------
+    #------------------------ ESCOLHA ENTRE PAGAR OU RECEBER(GERAR QR CODE) -----------------------
 
   PR = True
   while PR:
     print("\nPara realizar pagamento - Digite 'P'")
     print("Para receber - Digite 'R'")
-    print("Para sair - Digite 'SAIR'")
+    print("Para sair - Digite 'VOLTAR'")
     escolha = 0
     escolha = input("Opção: ").upper()
 
@@ -139,8 +140,8 @@ while repetir:
       print("Você escolheu a opção Receber") #(CASO 2)
       receber()
       PR = False
-    elif escolha == "SAIR":
-      print("Você escolheu a opção sair") 
+    elif escolha == "VOLTAR":
+      print("Você escolheu a opção voltar") 
       print("Até breve")
       PR = False
     else:
