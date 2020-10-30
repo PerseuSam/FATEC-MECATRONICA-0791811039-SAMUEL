@@ -23,7 +23,7 @@ while posicao < len(QR_code):
 
     if marcar == 3:
       terceira_posicao = posicao_do_pontoEvirgula
-      valorzinho = QR_code[(segunda_posicao + 2) : (terceira_posicao - 1)]
+      valorzinho = int(QR_code[(segunda_posicao + 2) : (terceira_posicao - 1)])
       print(valorzinho)
   posicao = posicao + 1
 
@@ -34,6 +34,8 @@ if nominho == um_nome:
   print("nome correto")
   if valor == valorzinho:
     print("valor correto")
+  else:
+    print("arrume o valor")
 else:
   print("Dados diferentes")
   
