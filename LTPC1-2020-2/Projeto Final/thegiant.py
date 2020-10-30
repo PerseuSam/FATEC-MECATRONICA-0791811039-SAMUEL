@@ -4,6 +4,16 @@
 
 #0 ; JULIA ; 300 ; 5155
 
+#nome_completo = (input("\nVamos começar pelo seu nome, qual seu nome completo? ").title()).split()
+#print("Olá", nome_completo[0].title())
+
+#cliente.append(" ".join(nome_completo))
+
+
+
+
+
+
 def pagar(): 
 
   malandragem = True
@@ -38,7 +48,7 @@ def pagar():
       posicao = posicao + 1
 
 
-    if recebedor == um_nome or recebedor != recebedor_QR or ID_recebedor != ID_QR:
+    if recebedor == nome_completo or recebedor != recebedor_QR or ID_recebedor != ID_QR:
       print("Algo deu errado")
       print("Tente novamente")
     elif valor != valor_QR:
@@ -65,20 +75,22 @@ def pagar():
 
 def receber():
   
-  um_nome.upper()
+  primeiro_nome = nome_completo.split()
+  primeiro_nome[0].upper()
   valor = int(input("Gerar QR Code de qual valor? "))
   import random
   n_aleatorio = (random.randrange(1000, 9999))
 
-  print("Seu QR Code é:", ID,";", um_nome.upper(),";", valor,";", n_aleatorio)
+  print("Seu QR Code é:", ID,";", primeiro_nome[0].upper(),";", valor,";", n_aleatorio)
+
 
 
 
 
 #------------------------------------------ INICIO --------------------------------------------
 
-nomes = ["Julia", "Davi", "Diego"]
-e_mails = ["ju@gmail", "davi@gmail", "ego@gmail"]
+nomes = ["Julia Camargo", "Davi Montanha", "Diego Jota Ribas"]
+e_mails = ["ju_lima@gmail", "davi&montanha@gmail", "ego&jota@gmail"]
 senhas = ["1234", "2345", "3456"]
 saldo = [1000, 250, 3000]
 
@@ -87,11 +99,11 @@ saldo = [1000, 250, 3000]
 repetir = True
 while repetir:
 
-  um_nome = input("Coloque seu nome: ").title()
+  nome_completo = input("Coloque seu nome completo: ").title()
   senha = input("Coloque sua senha: ")
 
-  if um_nome in nomes:
-    ID = nomes.index(um_nome) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
+  if nome_completo in nomes:
+    ID = nomes.index(nome_completo) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
     if senha in senhas[ID]:#CORRIGIR, se eu aperto "enter" na senha, ele aparece "Acesso autorizado"
       print("Acesso autorizado")
       repetir = False
