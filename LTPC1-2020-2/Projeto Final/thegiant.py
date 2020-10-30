@@ -7,9 +7,9 @@ def pagar():
 
   repete_pagar = True
   while repete_pagar:
-    recebedor = input("Para quem você deseja pagar?(Nome completo) ").title() #Se não encontra o nome na lista, da crash
-    valor = float(input("Insira o valor: "))
-    QR_code = input("Insira o QR Code: ") 
+    recebedor = input("Para quem você deseja pagar?(Nome completo) ").title() #CORRIGIR, se não encontra o nome na lista ou digita números, da crash
+    valor = float(input("Insira o valor: ")) #CORRIGIR, se digita letras, da crash
+    QR_code = input("Insira o QR Code: ") #CORRIGIR?, se digita algo dierente do QR Code, da crash
     ID_recebedor = nomes.index(recebedor)
     primeiro_nome = recebedor.split()
     primeiro_nome[0].upper()
@@ -149,5 +149,6 @@ while (1): #Looping infinito
     else:
       print("Opção inválida")
       print("Tente Novamente")
+
 
 
