@@ -52,9 +52,9 @@ def pagar():
       if (saldo[ID] - valor) >= 0:
         saldo[ID] -= valor
         saldo[posicao_recebedor] += valor
-        print("Transação efetuada")
+        print("\nTransação efetuada")
         print("Seu saldo atual é: R$", saldo[ID])
-        print(saldo, "\n") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
+        print("Saldo de todos os clientes", saldo, "\n") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
         malandragem = False
       else:
         print("Saldo insuficiente")
