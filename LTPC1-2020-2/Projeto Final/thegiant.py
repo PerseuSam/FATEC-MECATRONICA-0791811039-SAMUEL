@@ -8,13 +8,10 @@ def pagar():
 
   malandragem = True
   while malandragem:
-    recebedor = input("Para quem você deseja pagar?(Julia) ").title() ##ATENÇÃO #Aqui é para inserir o usuário que vai receber
+    recebedor = input("Para quem você deseja pagar?(Julia) ").title()
     valor = int(input("Insira o valor(300): "))
     QR_code = input("Insira o QR Code: ") #0 ; JULIA ; 300 ; 5155
     ID_recebedor = nomes.index(recebedor)
-    print(QR_code) #não mostrar para o usuário
-
-
 
     marcar = 0
     posicao = 0
@@ -32,15 +29,12 @@ def pagar():
         if marcar == 1:
           primeira_posicao = posicao_do_pontoEvirgula
           ID_QR = int(QR_code[: (primeira_posicao - 1)])
-          print(ID_QR) #não mostrar para o usuário
         if  marcar == 2:
           segunda_posicao = posicao_do_pontoEvirgula
           recebedor_QR = (QR_code[(primeira_posicao + 2) : (segunda_posicao - 1)]).title() #0 ; JULIA ; 300 ; 5155
-          print(recebedor_QR) #não mostrar para o usuário
         if marcar == 3:
           terceira_posicao = posicao_do_pontoEvirgula
           valor_QR = int(QR_code[(segunda_posicao + 2) : (terceira_posicao - 1)]) #0 ; JULIA ; 300 ; 5155
-          print(valor_QR) #não mostrar para o usuário
       posicao = posicao + 1
 
 
@@ -52,32 +46,17 @@ def pagar():
       print("Tente novamente")
 
     posicao_recebedor = nomes.index(recebedor) ##ATENÇÃO
-    print(saldo) #não mostrar para o usuário
         
     if (saldo[ID] - valor) >= 0:
       saldo[ID] -= valor
       saldo[posicao_recebedor] += valor
       print("Transação efetuada")
       print("Seu saldo atual é: R$", saldo[ID])
-      print(saldo)#não mostrar para o usuário
       malandragem = False
     else:
       print("Saldo insuficiente")
       print("Seu saldo é de: ", "R$ ",saldo[ID])
       print("Tente novamente")
-      #Perguntar se quer tentar novamente
-      #COLOCAR OPÇÃO SAIR E OPÇÃO REPETIR COM OUTRO VALOR
-   
-
-
-
-
-
-
-
-
-
-
 
 
 #------------------------------------------- CASO 2 -------------------------------------------
@@ -113,7 +92,6 @@ while repetir:
 
   if um_nome in nomes:
     ID = nomes.index(um_nome) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
-    print(ID)#não mostrar para o usuário
     if senha in senhas[ID]:#CORRIGIR, se eu aperto "enter" na senha, ele aparece "Acesso autorizado"
       print("Acesso autorizado")
       repetir = False
@@ -130,15 +108,20 @@ PR = True
 while PR:
   print("Para realizar pagamento - Digite 'P'")
   print("Para receber - Digite 'R'")
+  print("Para sair - Digite 'SAIR'")
   escolha = 0
   escolha = input("Opção: ").upper()
 
   if escolha == "P":
-    print("Você escolheu P")#(CASO 1)      #APAGAR
+    print("Você escolheu a opção Pagamento") #(CASO 1)
     pagar()
   elif escolha == "R":
-    print("Você escolheu R")#(CASO 2)      #APAGAR
+    print("Você escolheu a opção Receber") #(CASO 2)
     receber()
+  elif escolha == "SAIR":
+    print("Você escolheu a opção sair") 
+    print("Até breve")
+    break
   else:
     print("Opção inválida")
     print("Tente Novamente")
