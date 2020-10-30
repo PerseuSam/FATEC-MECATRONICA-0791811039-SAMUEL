@@ -17,6 +17,10 @@ def pagar():
       posicao_recebedor = nomes.index(recebedor) ##ATENÇÃO
       print(saldo) #não mostrar para o usuário
       valor = int(input("Digite um valor: ")) #Aqui é para inserir o valor
+      ##if valor =! valorzinho
+        ##print("valores diferentes")
+        ##VOLTAR PARA COLOCAR O VALOR NOVAMENTE
+        ##DAR A OPÇÃO DE VOLTAR A ESCOLHA DE NOMES E QR CODE
 ## -----------------------------------------------------------------------------------------------------------------------
       if (saldo[ID] - valor) >= 0:
         saldo[ID] -= valor
