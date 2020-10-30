@@ -21,6 +21,8 @@ def pagar():
         ##print("valores diferentes")
         ##VOLTAR PARA COLOCAR O VALOR NOVAMENTE
         ##DAR A OPÇÃO DE VOLTAR A ESCOLHA DE NOMES E QR CODE
+      ##else:
+        ##CONTINUA NORMALMENTE
 ## -----------------------------------------------------------------------------------------------------------------------
       if (saldo[ID] - valor) >= 0:
         saldo[ID] -= valor
