@@ -1,16 +1,15 @@
 #------------------------------------------- CASO 1 -------------------------------------------
 #------------------------------------- AQUI É PARA PAGAR --------------------------------------
-#CORRIGIR POSSIVEIS DEFEITOS
 
-#0 ; JULIA ; 300 ; 5155
+#EXEMPLO DE QR CODE: 0 ; JULIA ; 300.0 ; 5155
 
 def pagar(): 
 
   malandragem = True
   while malandragem:
     recebedor = input("Para quem você deseja pagar?(Nome completo) ").title() #Se não encontra o nome na lista, da crash
-    valor = int(input("Insira o valor: "))
-    QR_code = input("Insira o QR Code: ") #0 ; JULIA ; 300 ; 5155
+    valor = float(input("Insira o valor: "))
+    QR_code = input("Insira o QR Code: ") 
     ID_recebedor = nomes.index(recebedor)
     primeiro_nome = recebedor.split()
     primeiro_nome[0].upper()
@@ -33,10 +32,10 @@ def pagar():
           ID_QR = int(QR_code[: (primeira_posicao - 1)])
         if  marcar == 2:
           segunda_posicao = posicao_do_pontoEvirgula
-          recebedor_QR = (QR_code[(primeira_posicao + 2) : (segunda_posicao - 1)]).title() #0 ; JULIA ; 300 ; 5155
+          recebedor_QR = (QR_code[(primeira_posicao + 2) : (segunda_posicao - 1)]).title()
         if marcar == 3:
           terceira_posicao = posicao_do_pontoEvirgula
-          valor_QR = int(QR_code[(segunda_posicao + 2) : (terceira_posicao - 1)]) #0 ; JULIA ; 300 ; 5155
+          valor_QR = float(QR_code[(segunda_posicao + 2) : (terceira_posicao - 1)])
       posicao = posicao + 1
 
 
@@ -47,7 +46,7 @@ def pagar():
       print("Valor informado diferente do QR Code")
       print("Tente novamente")
     else:
-      posicao_recebedor = nomes.index(recebedor) ##ATENÇÃO
+      posicao_recebedor = nomes.index(recebedor) 
           
       if (saldo[ID] - valor) >= 0:
         saldo[ID] -= valor
@@ -81,11 +80,10 @@ def pagar():
 
 #------------------------------------------- CASO 2 -------------------------------------------
 #----------------------------- AQUI É PARA RECEBER (GERAR QR CODE) ----------------------------
-#CORRIGIR POSSIVEIS DEFEITOS
 
 def receber():
   
-  valor = int(input("Gerar QR Code de qual valor? "))
+  valor = float(input("Gerar QR Code de qual valor? ")) # Se apertar só enter ou tiver letras da erro
   import random
   n_aleatorio = (random.randrange(1000, 9999))
 
@@ -100,7 +98,7 @@ def receber():
 nomes = ["Julia Camargo", "Davi Montanha", "Diego Jota Ribas"]
 e_mails = ["ju_lima@gmail", "davi&montanha@gmail", "ego&jota@gmail"]
 senhas = ["1234", "2345", "3456"]
-saldo = [1000, 250, 3000]
+saldo = [1000.0, 250.0, 3000.0]
 
 #------------------------------------------ ACESSO --------------------------------------------
 while (1): #Looping infinito
@@ -122,13 +120,17 @@ while (1): #Looping infinito
     else:
       print("Senha ou nome incorreto")
       print("Tente novamente\n")
-    #------------------------ ESCOLHA ENTRE PAGAR OU RECEBER(GERAR QR CODE) -----------------------
+
+
+
+
+#------------------------ ESCOLHA ENTRE PAGAR OU RECEBER(GERAR QR CODE) -----------------------
 
   PR = True
   while PR:
     print("\nPara realizar pagamento - Digite 'P'")
     print("Para receber - Digite 'R'")
-    print("Para sair - Digite 'VOLTAR'")
+    print("Para voltar - Digite 'VOLTAR'")
     escolha = 0
     escolha = input("Opção: ").upper()
 
@@ -147,3 +149,5 @@ while (1): #Looping infinito
     else:
       print("Opção inválida")
       print("Tente Novamente")
+
+
