@@ -51,7 +51,8 @@ def pagar():
     if (saldo[ID] - valor) >= 0:
       saldo[ID] -= valor
       saldo[posicao_recebedor] += valor
-      print("Transação efetuada\n", "Seu saldo atual é: R$", saldo[ID])
+      print("Transação efetuada")
+      print("Seu saldo atual é: R$", saldo[ID])
       print(saldo)#não mostrar para o usuário
       malandragem = False
     else:
@@ -127,11 +128,9 @@ while PR:
   escolha = input("Opção: ").upper()
 
   if escolha == "P":
-    PR = False
     print("Você escolheu P")#(CASO 1)      #APAGAR
     pagar()
   elif escolha == "R":
-    PR = False
     print("Você escolheu R")#(CASO 2)      #APAGAR
     receber()
   else:
