@@ -4,27 +4,16 @@
 
 #0 ; JULIA ; 300 ; 5155
 
-#nome_completo = (input("\nVamos começar pelo seu nome, qual seu nome completo? ").title()).split()
-#print("Olá", nome_completo[0].title())
-
-#cliente.append(" ".join(nome_completo))
-
-
-
-
-
-
 def pagar(): 
 
   malandragem = True
   while malandragem:
-    recebedor = input("Para quem você deseja pagar?(Julia) ").title()
-    valor = int(input("Insira o valor(300): "))
+    recebedor = input("Para quem você deseja pagar?(Nome completo) ").title() #Se não encontra o nome na lista, da crash
+    valor = int(input("Insira o valor: "))
     QR_code = input("Insira o QR Code: ") #0 ; JULIA ; 300 ; 5155
     ID_recebedor = nomes.index(recebedor)
     primeiro_nome = recebedor.split()
     primeiro_nome[0].upper()
-    print(primeiro_nome[0].upper())
 
     marcar = 0
     posicao = 0
@@ -65,11 +54,29 @@ def pagar():
         saldo[posicao_recebedor] += valor
         print("Transação efetuada")
         print("Seu saldo atual é: R$", saldo[ID])
+        print(saldo, "\n") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
         malandragem = False
       else:
         print("Saldo insuficiente")
         print("Seu saldo é de: ", "R$ ",saldo[ID])
-        print("Tente novamente")
+        saldo_zero = True
+        while saldo_zero:
+          print("Tentar novamente ou sair?")
+          print("Para Tentar Novamente - Digite 'T'")
+          print("Para sair - Digite 'SAIR'")
+          decisao = 0
+          decisao = input("Opção: ").upper()
+          if decisao == "T":
+            saldo_zero = False
+            malandragem = True
+          elif decisao == "SAIR":
+            saldo_zero = False
+            malandragem = False
+          else:
+            print("Escolha Inválida")
+            print("Tente Novamente\n")
+
+
 
 
 #------------------------------------------- CASO 2 -------------------------------------------
@@ -82,7 +89,7 @@ def receber():
   import random
   n_aleatorio = (random.randrange(1000, 9999))
 
-  print("Seu QR Code é:", ID,";", primeiro_nome[0].upper(),";", valor,";", n_aleatorio)
+  print("Seu QR Code é:", ID,";", primeiro_nome[0].upper(),";", valor,";", n_aleatorio, "\n")
 
 
 
@@ -99,7 +106,7 @@ saldo = [1000, 250, 3000]
 
 repetir = True
 while repetir:
-
+  print("Login")
   nome_completo = input("Coloque seu nome completo: ").title()
   senha = input("Coloque sua senha: ")
 
@@ -108,34 +115,34 @@ while repetir:
     if senha in senhas[ID]:#CORRIGIR, se eu aperto "enter" na senha, ele aparece "Acesso autorizado"
       print("Acesso autorizado")
       primeiro_nome = nome_completo.split()
-      repetir = False
     else:
       print("Senha ou nome incorreto") 
       print("Tente novamente\n")
   else:
     print("Senha ou nome incorreto")
     print("Tente novamente\n")
+  #------------------------ ESCOLHA ENTRE PAGAR OU RECEBER(GERAR QR CODE) -----------------------
 
-#------------------------ ESCOLHA ENTRE PAGAR OU RECEBER(GERAR QR CODE) -----------------------
+  PR = True
+  while PR:
+    print("\nPara realizar pagamento - Digite 'P'")
+    print("Para receber - Digite 'R'")
+    print("Para sair - Digite 'SAIR'")
+    escolha = 0
+    escolha = input("Opção: ").upper()
 
-PR = True
-while PR:
-  print("\nPara realizar pagamento - Digite 'P'")
-  print("Para receber - Digite 'R'")
-  print("Para sair - Digite 'SAIR'")
-  escolha = 0
-  escolha = input("Opção: ").upper()
-
-  if escolha == "P":
-    print("Você escolheu a opção Pagamento") #(CASO 1)
-    pagar()
-  elif escolha == "R":
-    print("Você escolheu a opção Receber") #(CASO 2)
-    receber()
-  elif escolha == "SAIR":
-    print("Você escolheu a opção sair") 
-    print("Até breve")
-    break
-  else:
-    print("Opção inválida")
-    print("Tente Novamente")
+    if escolha == "P":
+      print("Você escolheu a opção Pagamento") #(CASO 1)
+      pagar()
+      PR = False
+    elif escolha == "R":
+      print("Você escolheu a opção Receber") #(CASO 2)
+      receber()
+      PR = False
+    elif escolha == "SAIR":
+      print("Você escolheu a opção sair") 
+      print("Até breve")
+      PR = False
+    else:
+      print("Opção inválida")
+      print("Tente Novamente")
