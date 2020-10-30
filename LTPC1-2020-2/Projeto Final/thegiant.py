@@ -2,56 +2,55 @@
 #------------------------------------- AQUI É PARA PAGAR --------------------------------------
 #CORRIGIR POSSIVEIS DEFEITOS
 
+#1 ; DAVI ; 325 ; 5155
+
 def pagar(): 
 
   malandragem = True
   while malandragem:
-    recebedor = input("Para quem você deseja pagar? ").title() ##ATENÇÃO #Aqui é para inserir o usuário que vai receber
-    if recebedor == um_nome:
-      print("Impossivel pagar para si mesmo")
+    recebedor = input("Para quem você deseja pagar?(Davi) ").title() ##ATENÇÃO #Aqui é para inserir o usuário que vai receber
+    valor = int(input("Insira o valor(325): "))
+    QR_code = input("Insira o QR Code: ")
+    print(QR_code) #não mostrar para o usuário
+
+    marcar = 0
+    posicao = 0
+    primeira_posicao = 0
+    segunda_posicao = 0
+    terceira_posicao = 0
+    recebedor_QR = 0
+    valor_QR = 0
+    posicao_do_pontoEvirgula = 0
+    while posicao < len(QR_code):
+      if QR_code[posicao] == ";":
+        marcar += 1
+        posicao_do_pontoEvirgula = posicao
+        if marcar == 1:
+          primeira_posicao = posicao_do_pontoEvirgula
+        if  marcar == 2:
+          segunda_posicao = posicao_do_pontoEvirgula
+          recebedor_QR = (QR_code[(primeira_posicao + 2) : (segunda_posicao - 1)]).title()
+          print(recebedor_QR) #não mostrar para o usuário
+
+        if marcar == 3:
+          terceira_posicao = posicao_do_pontoEvirgula
+          valor_QR = int(QR_code[(segunda_posicao + 2) : (terceira_posicao - 1)])
+          print(valor_QR) #não mostrar para o usuário
+      posicao = posicao + 1
+
+
+    if recebedor == um_nome or recebedor != recebedor_QR:
+      print("Algo deu errado")
+      print("Tente novamente")
+    elif valor != valor_QR:
+      print("Valor informado diferente do QR Code")
       print("Tente novamente")
     else:
       malandragem = False
 
-  QR_code = input("Insira o QR Code: ")
-  print(QR_code) #não mostrar para o usuário
-  marcar = 0
-  posicao = 0
-  primeira_posicao = 0
-  segunda_posicao = 0
-  terceira_posicao = 0
-  recebedor_QR = 0
-  valor_QR = 0
-  posicao_do_pontoEvirgula = 0
-  while posicao < len(QR_code):
-    if QR_code[posicao] == ";":
-      marcar += 1
-      posicao_do_pontoEvirgula = posicao
-      if marcar == 1:
-        primeira_posicao = posicao_do_pontoEvirgula
-      if  marcar == 2:
-        segunda_posicao = posicao_do_pontoEvirgula
-        recebedor_QR = QR_code[(primeira_posicao + 2) : (segunda_posicao - 1)]
-        print(recebedor_QR) #não mostrar para o usuário
-
-      if marcar == 3:
-        terceira_posicao = posicao_do_pontoEvirgula
-        valor_QR = int(QR_code[(segunda_posicao + 2) : (terceira_posicao - 1)])
-        print(valor_QR) #não mostrar para o usuário
-    posicao = posicao + 1
-
-  um_nome.upper()
-  valor = int(input("Insira o valor(325): "))
-
-  if valor == valor_QR:
-    print("valor correto") #não mostrar para o usuário
-  else:
-    print("arrume o valor") #não mostrar para o usuário
-
   posicao_recebedor = nomes.index(recebedor) ##ATENÇÃO
   print(saldo) #não mostrar para o usuário
       
-    #1 ; DAVI ; 325 ; 5155
 
   if (saldo[ID] - valor) >= 0:
     saldo[ID] -= valor
