@@ -60,7 +60,7 @@ while programa:
             continuar_1 = False
 #---------------------------------------------------------------------------------------------------------
         elif opcao == "2":
-            print("entrando") #ENTRA EM TRANSAÇÕES (ETAPA FEITA EM "thegiant.py")
+            print("entrando") #ENTRA EM TRANSAÇÕES (ETAPA FEITA EM "Thegiant.py")
             continuar_1 = False
 
         elif opcao == "sair":
