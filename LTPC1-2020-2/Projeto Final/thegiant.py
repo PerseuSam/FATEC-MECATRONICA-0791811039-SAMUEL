@@ -106,7 +106,7 @@ while repetir:
 
 PR = True
 while PR:
-  print("Para realizar pagamento - Digite 'P'")
+  print("\nPara realizar pagamento - Digite 'P'")
   print("Para receber - Digite 'R'")
   print("Para sair - Digite 'SAIR'")
   escolha = 0
