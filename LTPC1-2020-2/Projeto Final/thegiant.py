@@ -22,6 +22,9 @@ def pagar():
     valor = int(input("Insira o valor(300): "))
     QR_code = input("Insira o QR Code: ") #0 ; JULIA ; 300 ; 5155
     ID_recebedor = nomes.index(recebedor)
+    primeiro_nome = recebedor.split()
+    primeiro_nome[0].upper()
+    print(primeiro_nome[0].upper())
 
     marcar = 0
     posicao = 0
@@ -48,25 +51,25 @@ def pagar():
       posicao = posicao + 1
 
 
-    if recebedor == nome_completo or recebedor != recebedor_QR or ID_recebedor != ID_QR:
+    if recebedor == nome_completo or primeiro_nome[0].upper() != recebedor_QR.upper() or ID_recebedor != ID_QR:
       print("Algo deu errado")
       print("Tente novamente")
     elif valor != valor_QR:
       print("Valor informado diferente do QR Code")
       print("Tente novamente")
-
-    posicao_recebedor = nomes.index(recebedor) ##ATENÇÃO
-        
-    if (saldo[ID] - valor) >= 0:
-      saldo[ID] -= valor
-      saldo[posicao_recebedor] += valor
-      print("Transação efetuada")
-      print("Seu saldo atual é: R$", saldo[ID])
-      malandragem = False
     else:
-      print("Saldo insuficiente")
-      print("Seu saldo é de: ", "R$ ",saldo[ID])
-      print("Tente novamente")
+      posicao_recebedor = nomes.index(recebedor) ##ATENÇÃO
+          
+      if (saldo[ID] - valor) >= 0:
+        saldo[ID] -= valor
+        saldo[posicao_recebedor] += valor
+        print("Transação efetuada")
+        print("Seu saldo atual é: R$", saldo[ID])
+        malandragem = False
+      else:
+        print("Saldo insuficiente")
+        print("Seu saldo é de: ", "R$ ",saldo[ID])
+        print("Tente novamente")
 
 
 #------------------------------------------- CASO 2 -------------------------------------------
@@ -75,8 +78,6 @@ def pagar():
 
 def receber():
   
-  primeiro_nome = nome_completo.split()
-  primeiro_nome[0].upper()
   valor = int(input("Gerar QR Code de qual valor? "))
   import random
   n_aleatorio = (random.randrange(1000, 9999))
@@ -106,6 +107,7 @@ while repetir:
     ID = nomes.index(nome_completo) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
     if senha in senhas[ID]:#CORRIGIR, se eu aperto "enter" na senha, ele aparece "Acesso autorizado"
       print("Acesso autorizado")
+      primeiro_nome = nome_completo.split()
       repetir = False
     else:
       print("Senha ou nome incorreto") 
