@@ -2,22 +2,26 @@
 #------------------------------------- AQUI É PARA PAGAR --------------------------------------
 #CORRIGIR POSSIVEIS DEFEITOS
 
-#1 ; DAVI ; 1500 ; 5155
+#0 ; JULIA ; 300 ; 5155
 
 def pagar(): 
 
   malandragem = True
   while malandragem:
-    recebedor = input("Para quem você deseja pagar?(Davi) ").title() ##ATENÇÃO #Aqui é para inserir o usuário que vai receber
-    valor = int(input("Insira o valor(1500): "))
-    QR_code = input("Insira o QR Code: ")
+    recebedor = input("Para quem você deseja pagar?(Julia) ").title() ##ATENÇÃO #Aqui é para inserir o usuário que vai receber
+    valor = int(input("Insira o valor(300): "))
+    QR_code = input("Insira o QR Code: ") #0 ; JULIA ; 300 ; 5155
+    ID_recebedor = nomes.index(recebedor)
     print(QR_code) #não mostrar para o usuário
+
+
 
     marcar = 0
     posicao = 0
     primeira_posicao = 0
     segunda_posicao = 0
     terceira_posicao = 0
+    ID_QR = 0
     recebedor_QR = 0
     valor_QR = 0
     posicao_do_pontoEvirgula = 0
@@ -27,18 +31,20 @@ def pagar():
         posicao_do_pontoEvirgula = posicao
         if marcar == 1:
           primeira_posicao = posicao_do_pontoEvirgula
+          ID_QR = int(QR_code[: (primeira_posicao - 1)])
+          print(ID_QR) #não mostrar para o usuário
         if  marcar == 2:
           segunda_posicao = posicao_do_pontoEvirgula
-          recebedor_QR = (QR_code[(primeira_posicao + 2) : (segunda_posicao - 1)]).title()
+          recebedor_QR = (QR_code[(primeira_posicao + 2) : (segunda_posicao - 1)]).title() #0 ; JULIA ; 300 ; 5155
           print(recebedor_QR) #não mostrar para o usuário
-
         if marcar == 3:
           terceira_posicao = posicao_do_pontoEvirgula
-          valor_QR = int(QR_code[(segunda_posicao + 2) : (terceira_posicao - 1)])
+          valor_QR = int(QR_code[(segunda_posicao + 2) : (terceira_posicao - 1)]) #0 ; JULIA ; 300 ; 5155
           print(valor_QR) #não mostrar para o usuário
       posicao = posicao + 1
 
-    if recebedor == um_nome or recebedor != recebedor_QR:
+
+    if recebedor == um_nome or recebedor != recebedor_QR or ID_recebedor != ID_QR:
       print("Algo deu errado")
       print("Tente novamente")
     elif valor != valor_QR:
