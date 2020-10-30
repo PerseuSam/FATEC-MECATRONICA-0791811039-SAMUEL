@@ -45,8 +45,7 @@ def pagar():
 #CORRIGIR POSSIVEIS DEFEITOS
 
 def receber():
-
-  ID = nomes.index(um_nome)
+  
   um_nome.upper()
   valor = int(input("Gerar Qr Code de qual valor? "))
   import random
@@ -105,4 +104,3 @@ while RP:
   else:
     print("Opção inválida")
     print("Tente Novamente")
-
