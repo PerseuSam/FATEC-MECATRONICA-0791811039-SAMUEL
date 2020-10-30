@@ -1,4 +1,4 @@
-#Inicializção
+#--------------------------------------- Inicializção ----------------------------------------
 
 Usuarios = {1: ["Carlos Augusto", "augusto.carlos@gmail.com", "2358"], 2: ["Ana Carolina", "ana.carlo@gmail.com", "6752"], 3: ["Igor Moraes", "imoraes.raes@gmail.com", "1374"]
 }
@@ -16,15 +16,16 @@ programa = True
 while programa:
 
     print("Para adicionar usuário - Digite 1")
-    print("Para realizar transação - Digite 2")
+    print("Para realizar transações - Digite 2")
     print("Para sair - Digite sair")
 
     continuar_1 = True
     opcao = 0
 
     while continuar_1:
-        opcao = input("Opção: ")
+        opcao = input("Opção: ")    
         if opcao == "1":
+#------------------------------- CADASTRO DE PESSOAS NOVAS ----------------------------------------------------          
             continuar_2 = True
             while continuar_2:
 
@@ -57,25 +58,21 @@ while programa:
 
                 continuar_2 = input("\nAdicionar mais algúem? (s/n)") == "s"
             continuar_1 = False
-
+#---------------------------------------------------------------------------------------------------------
         elif opcao == "2":
-            print("entrando")
+            print("entrando") #ENTRA EM TRANSAÇÕES (ETAPA FEITA EM "thegiant.py")
             continuar_1 = False
 
         elif opcao == "sair":
-            print("Até breve")
+            print("Até breve") #SAI DO PROGRAMA TODO
             continuar_1 = False
             programa = False
 
         else:
             print("Opção inválida, tente novamente")
 
-    ##Transações começa aqui
+            
+            
+##Transações começa aqui--------------------------------------------------------------------------
 
-    nome_completo = input("Digite seu nome completo: ").title()
-    #senha = input("Digite sua senha: ")
-    if nome_completo in Usuarios[ID]:
-      print("senhas iguais, acesso liberado")
-    else:
-      print("senhas diferentes, acesso negado")
-    break
+    
