@@ -7,11 +7,12 @@ def pagar():
   malandragem = True
   while malandragem:
     pagador = input("QR Code aqui, nome: ").title()
+    #Aqui deve-se colocar o QR code e eu vou ter que dar um jeito do programa entender 
     if pagador == um_nome:
       print("Impossivel pagar para si mesmo")
       #COLOCAR OPÇÃO SAIR
     else:
-      recebedor= nomes.index(pagador)
+      recebedor = nomes.index(pagador)
       print(saldo)#não mostrar para o usuário
       valor = int(input("Digite um valor: "))
 
