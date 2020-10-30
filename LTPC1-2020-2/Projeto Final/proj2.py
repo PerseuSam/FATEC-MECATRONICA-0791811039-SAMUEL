@@ -26,6 +26,7 @@ def pagar():
       else:
         print("saldo insuficiente")
         print("Seu saldo é de: ", "R$ ",saldo[ID])
+        #Perguntar se quer tentar novamente
         #COLOCAR OPÇÃO SAIR E OPÇÃO REPETIR COM OUTRO VALOR
         malandragem = False
 
@@ -97,6 +98,4 @@ while RP:
   else:
     print("Opção inválida")
     print("Tente Novamente")
-
-
 
