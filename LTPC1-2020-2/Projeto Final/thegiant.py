@@ -5,8 +5,8 @@
 
 def pagar(): 
 
-  malandragem = True
-  while malandragem:
+  repete_pagar = True
+  while repete_pagar:
     recebedor = input("Para quem você deseja pagar?(Nome completo) ").title() #Se não encontra o nome na lista, da crash
     valor = float(input("Insira o valor: "))
     QR_code = input("Insira o QR Code: ") 
@@ -54,7 +54,7 @@ def pagar():
         print("\nTransação efetuada")
         print("Seu saldo atual é: R$", saldo[ID])
         print("Saldo de todos os clientes", saldo, "\n") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
-        malandragem = False
+        repete_pagar = False
       else:
         print("Saldo insuficiente")
         print("Seu saldo é de: ", "R$ ",saldo[ID])
@@ -67,10 +67,10 @@ def pagar():
           decisao = input("Opção: ").upper()
           if decisao == "T":
             saldo_zero = False
-            malandragem = True
+            repete_pagar = True
           elif decisao == "SAIR":
             saldo_zero = False
-            malandragem = False
+            repete_pagar = False
           else:
             print("Escolha Inválida")
             print("Tente Novamente\n")
@@ -83,7 +83,7 @@ def pagar():
 
 def receber():
   
-  valor = float(input("Gerar QR Code de qual valor? ")) # Se apertar só enter ou tiver letras da erro
+  valor = float(input("Gerar QR Code de qual valor? ")) #CORRIGIR, se apertar só "enter" ou tiver letras da crash
   import random
   n_aleatorio = (random.randrange(1000, 9999))
 
@@ -110,7 +110,7 @@ while (1): #Looping infinito
 
     if nome_completo in nomes:
       ID = nomes.index(nome_completo) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
-      if senha in senhas[ID]:#CORRIGIR, se eu aperto "enter" na senha, ele aparece "Acesso autorizado"
+      if senha in senhas[ID]: #CORRIGIR, se eu aperto "enter" na senha, ele aparece "Acesso autorizado"
         print("Acesso autorizado")
         primeiro_nome = nome_completo.split()
         repetir = False
