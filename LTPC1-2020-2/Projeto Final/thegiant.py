@@ -2,14 +2,14 @@
 #------------------------------------- AQUI É PARA PAGAR --------------------------------------
 #CORRIGIR POSSIVEIS DEFEITOS
 
-#1 ; DAVI ; 325 ; 5155
+#1 ; DAVI ; 1500 ; 5155
 
 def pagar(): 
 
   malandragem = True
   while malandragem:
     recebedor = input("Para quem você deseja pagar?(Davi) ").title() ##ATENÇÃO #Aqui é para inserir o usuário que vai receber
-    valor = int(input("Insira o valor(325): "))
+    valor = int(input("Insira o valor(1500): "))
     QR_code = input("Insira o QR Code: ")
     print(QR_code) #não mostrar para o usuário
 
@@ -38,31 +38,28 @@ def pagar():
           print(valor_QR) #não mostrar para o usuário
       posicao = posicao + 1
 
-
     if recebedor == um_nome or recebedor != recebedor_QR:
       print("Algo deu errado")
       print("Tente novamente")
     elif valor != valor_QR:
       print("Valor informado diferente do QR Code")
       print("Tente novamente")
-    else:
+
+    posicao_recebedor = nomes.index(recebedor) ##ATENÇÃO
+    print(saldo) #não mostrar para o usuário
+        
+    if (saldo[ID] - valor) >= 0:
+      saldo[ID] -= valor
+      saldo[posicao_recebedor] += valor
+      print("Transação efetuada\n", "Seu saldo atual é: R$", saldo[ID])
+      print(saldo)#não mostrar para o usuário
       malandragem = False
-
-  posicao_recebedor = nomes.index(recebedor) ##ATENÇÃO
-  print(saldo) #não mostrar para o usuário
-      
-
-  if (saldo[ID] - valor) >= 0:
-    saldo[ID] -= valor
-    saldo[posicao_recebedor] += valor
-    print("Transação efetuada\n", "Seu saldo atual é: R$", saldo[ID])
-    print(saldo)#não mostrar para o usuário
-
-  else:
-    print("saldo insuficiente")
-    print("Seu saldo é de: ", "R$ ",saldo[ID])
-    #Perguntar se quer tentar novamente
-    #COLOCAR OPÇÃO SAIR E OPÇÃO REPETIR COM OUTRO VALOR
+    else:
+      print("Saldo insuficiente")
+      print("Seu saldo é de: ", "R$ ",saldo[ID])
+      print("Tente novamente")
+      #Perguntar se quer tentar novamente
+      #COLOCAR OPÇÃO SAIR E OPÇÃO REPETIR COM OUTRO VALOR
    
 
 
@@ -122,20 +119,20 @@ while repetir:
 
 #------------------------ ESCOLHA ENTRE PAGAR OU RECEBER(GERAR QR CODE) -----------------------
 
-RP = True
-while RP:
+PR = True
+while PR:
   print("Para realizar pagamento - Digite 'P'")
   print("Para receber - Digite 'R'")
   escolha = 0
   escolha = input("Opção: ").upper()
 
   if escolha == "P":
-    RP = False
-    print("Vc escolheu P")#(CASO 1)      #APAGAR
+    PR = False
+    print("Você escolheu P")#(CASO 1)      #APAGAR
     pagar()
   elif escolha == "R":
-    RP = False
-    print("Vc escolheu R")#(CASO 2)      #APAGAR
+    PR = False
+    print("Você escolheu R")#(CASO 2)      #APAGAR
     receber()
   else:
     print("Opção inválida")
