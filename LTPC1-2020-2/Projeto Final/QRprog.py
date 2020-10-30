@@ -1,3 +1,10 @@
+##Aqui é para inserir o QR code (e eu vou ter que dar um jeito do programa entender)**********
+
+
+##Maneira que deve ser colocado o QR code corretamente: "1 ; DAVI ; 325 ; 5155"
+##Por exemplo, a conta de ID 5, do usuário Samuel, vai gerar um QRCode para receber o valor de 13 reias, mais um número aleatório, String gerada:
+## "5 ; SAMUEL ; 13 ; 5155"
+
 QR_code = input("Insira o QR Code: ")
 print(QR_code) 
 #posicao = QR_code[4]
@@ -40,3 +47,5 @@ else:
   print("Dados diferentes")
   
 #1 ; DAVI ; 325 ; 5155
+
+##********************************************************************************************
