@@ -95,8 +95,8 @@ def receber():
 
 #------------------------------------------ INICIO --------------------------------------------
 
-nomes = ["Julia Camargo", "Davi Montanha", "Diego Jota Ribas"]
-e_mails = ["ju_lima@gmail", "davi&montanha@gmail", "ego&jota@gmail"]
+nomes = ["Ana Lima", "Davi Montanha", "Diego Jota"]
+e_mails = ["a_lima@gmail", "davi&montanha@gmail", "ego&jota@gmail"]
 senhas = ["1234", "2345", "3456"]
 saldo = [1000.0, 250.0, 3000.0]
 
@@ -149,6 +149,5 @@ while (1): #Looping infinito
     else:
       print("Opção inválida")
       print("Tente Novamente")
-
 
 
