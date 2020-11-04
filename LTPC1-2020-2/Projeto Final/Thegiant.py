@@ -1,14 +1,14 @@
 #------------------------------------------- CASO 1 -------------------------------------------
 #------------------------------------- AQUI É PARA PAGAR --------------------------------------
 
-#EXEMPLO DE QR CODE: 0 ; JULIA ; 300.0 ; 5155
+#EXEMPLO DE QR CODE: 0;ANA;500;3017
 
 def pagar(): 
 
   repete_pagar = True
   while repete_pagar:
     recebedor = input("Para quem você deseja pagar?(Nome completo) ").title() #CORRIGIR, se não encontra o nome na lista ou digita números, da crash
-    valor = float(input("Insira o valor: ")) #CORRIGIR, se digita letras, da crash
+    valor = int(input("Insira o valor: ")) #CORRIGIR, se digita letras, da crash
     QR_code = input("Insira o QR Code: ") #CORRIGIR?, se digita algo dierente do QR Code, da crash
     ID_recebedor = nomes.index(recebedor)
     primeiro_nome = recebedor.split()
@@ -29,13 +29,16 @@ def pagar():
         posicao_do_pontoEvirgula = posicao
         if marcar == 1:
           primeira_posicao = posicao_do_pontoEvirgula
-          ID_QR = int(QR_code[: (primeira_posicao - 1)])
+          ID_QR = int(QR_code[:primeira_posicao])
+          print(ID_QR)
         if  marcar == 2:
           segunda_posicao = posicao_do_pontoEvirgula
-          recebedor_QR = (QR_code[(primeira_posicao + 2) : (segunda_posicao - 1)]).title()
+          recebedor_QR = (QR_code[(primeira_posicao+1) : segunda_posicao]).title()
+          print(recebedor_QR)
         if marcar == 3:
           terceira_posicao = posicao_do_pontoEvirgula
-          valor_QR = float(QR_code[(segunda_posicao + 2) : (terceira_posicao - 1)])
+          valor_QR = int(QR_code[(segunda_posicao+1) : terceira_posicao])
+          print(valor_QR)
       posicao = posicao + 1
 
 
@@ -83,11 +86,12 @@ def pagar():
 
 def receber():
   
-  valor = float(input("Gerar QR Code de qual valor? ")) #CORRIGIR, se apertar só "enter" ou tiver letras da crash
+  valor = int(input("Gerar QR Code de qual valor? ")) #CORRIGIR, se apertar só "enter" ou tiver letras da crash
   import random
   n_aleatorio = (random.randrange(1000, 9999))
 
   print("Seu QR Code é:", ID,";", primeiro_nome[0].upper(),";", valor,";", n_aleatorio, "\n")
+  print("Seu QR Code é: {};{};{};{}".format(ID, primeiro_nome[0].upper(), valor, n_aleatorio), "\n")
 
 
 
@@ -95,10 +99,10 @@ def receber():
 
 #------------------------------------------ INICIO --------------------------------------------
 
-nomes = ["Ana Lima", "Davi Montanha", "Diego Jota"]
-e_mails = ["a_lima@gmail", "davi&montanha@gmail", "ego&jota@gmail"]
+nomes = ["Ana Lima", "Davi Reis", "Diego Jota"]
+e_mails = ["a_lima@gmail", "davi&rei@gmail", "ego&jota@gmail"]
 senhas = ["1234", "2345", "3456"]
-saldo = [1000.0, 250.0, 3000.0]
+saldo = [1000, 250, 3000]
 
 #------------------------------------------ ACESSO --------------------------------------------
 while (1): #Looping infinito
@@ -149,5 +153,3 @@ while (1): #Looping infinito
     else:
       print("Opção inválida")
       print("Tente Novamente")
-
-
