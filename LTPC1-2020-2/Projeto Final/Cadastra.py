@@ -34,6 +34,12 @@ def cria_conta():
 
 
 
+#---------------------------------- 2) TRANSAÇÕES --------------------------------------
+def transacao():
+
+
+
+
 #--------------------------------------- INICIO ----------------------------------------
 
 usuarios = ["Ana Lima", "Davi Reis", "Diego Jota"]
@@ -63,7 +69,7 @@ while programa_completo:
       continuar_1 = False
 
     elif opcao == "2": #ENTRA EM TRANSAÇÕES (ETAPA FEITA EM "aPrincipal.py")
-      print("entrando")
+      transacao()
       continuar_1 = False
 
     elif opcao == "sair":
