@@ -68,7 +68,7 @@ while programa_completo:
       cria_conta()
       continuar_1 = False
 
-    elif opcao == "2": #ENTRA EM TRANSAÇÕES (ETAPA FEITA EM "aPrincipal.py")
+    elif opcao == "2": #ENTRA EM TRANSAÇÕES (ETAPA FEITA EM "Transacoes.py")
       transacao()
       continuar_1 = False
 
