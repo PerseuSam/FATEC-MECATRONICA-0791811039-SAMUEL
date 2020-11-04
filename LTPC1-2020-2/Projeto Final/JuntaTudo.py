@@ -41,7 +41,7 @@ def transacao():
   while repetir:
     print(usuarios) #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
     print(senhas) #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
-    print("Login")
+    print("\nLogin")
     nome_completo = input("Coloque seu nome completo: ").title()
     senha = input("Coloque sua senha: ")
 
@@ -77,8 +77,7 @@ def transacao():
       receber()
       PR = False
     elif escolha == "VOLTAR":
-      print("Você escolheu a opção voltar") 
-      print("Até breve")
+      print("Você escolheu a opção voltar\n") 
       PR = False
     else:
       print("Opção inválida")
@@ -97,12 +96,11 @@ saldo = [1000, 250, 3000]
 
 #-------------------------------------- ABERTURA ---------------------------------------
 
-print("Olá!")
-print("Em que posso ajudá-lo hoje?\n")
-
 programa_completo = True
 while programa_completo:
-  
+
+  print("Olá!")
+  print("Em que posso ajudá-lo hoje?\n")
   continuar_1 = True
   while continuar_1:
     print("Para adicionar usuário - Digite 1")
@@ -126,5 +124,4 @@ while programa_completo:
     else:
       print("Opção inválida")
       print("Tente novamente\n")
-
-            
+                  
