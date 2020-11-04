@@ -7,10 +7,28 @@ def pagar():
 
   repete_pagar = True
   while repete_pagar:
-    recebedor = input("Para quem você deseja pagar?(Nome completo) ").title() #CORRIGIR, se não encontra o nome na lista ou digita números, da crash
-    valor = int(input("Insira o valor: ")) #CORRIGIR, se digita letras, da crash
+    verificaNome = True
+    while verificaNome:
+      recebedor = input("\nPara quem você deseja pagar?(Nome completo) ").title()
+      if recebedor in usuarios:
+        verificaNome = False
+      else:
+        print("Algo errado")
+        print("Tente novamente")
+
+    verificaValor = True
+    while verificaValor:
+      valor = input("Insira o valor: ")
+      if valor.isdigit():
+        valor = int(valor)
+        verificaValor = False
+      else:
+        print("Algo errado")
+        print("Tente novamente")
+
     QR_code = input("Insira o QR Code: ") #CORRIGIR?, se digita algo dierente do QR Code, da crash
-    ID_recebedor = nomes.index(recebedor)
+
+    ID_recebedor = usuarios.index(recebedor)
     primeiro_nome = recebedor.split()
     primeiro_nome[0].upper()
 
@@ -30,15 +48,12 @@ def pagar():
         if marcar == 1:
           primeira_posicao = posicao_do_pontoEvirgula
           ID_QR = int(QR_code[:primeira_posicao])
-          print(ID_QR)
         if  marcar == 2:
           segunda_posicao = posicao_do_pontoEvirgula
           recebedor_QR = (QR_code[(primeira_posicao+1) : segunda_posicao]).title()
-          print(recebedor_QR)
         if marcar == 3:
           terceira_posicao = posicao_do_pontoEvirgula
           valor_QR = int(QR_code[(segunda_posicao+1) : terceira_posicao])
-          print(valor_QR)
       posicao = posicao + 1
 
 
@@ -49,18 +64,18 @@ def pagar():
       print("Valor informado diferente do QR Code")
       print("Tente novamente")
     else:
-      posicao_recebedor = nomes.index(recebedor) 
+      posicao_recebedor = usuarios.index(recebedor) 
           
       if (saldo[ID] - valor) >= 0:
         saldo[ID] -= valor
         saldo[posicao_recebedor] += valor
         print("\nTransação efetuada")
         print("Seu saldo atual é: R$", saldo[ID])
-        print("Saldo de todos os clientes", saldo, "\n") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
+        print("Saldo de todos os clientes:", saldo, "\n") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
         repete_pagar = False
       else:
         print("Saldo insuficiente")
-        print("Seu saldo é de: ", "R$ ",saldo[ID])
+        print("Seu saldo é de: R$ ",saldo[ID])
         saldo_zero = True
         while saldo_zero:
           print("Tentar novamente ou sair?")
@@ -88,7 +103,7 @@ def receber():
   
   verificaNumero = True
   while verificaNumero:
-    valor = input("Gerar QR Code de qual valor? ")
+    valor = input("\nGerar QR Code de qual valor? ")
     if valor.isdigit():
       valor = int(valor)
       verificaNumero = False
@@ -106,7 +121,7 @@ def receber():
 
 #------------------------------------------ INICIO --------------------------------------------
 
-nomes = ["Ana Lima", "Davi Reis", "Diego Jota"]
+usuarios = ["Ana Lima", "Davi Reis", "Diego Jota"]
 e_mails = ["a_lima@gmail", "davi&rei@gmail", "ego&jota@gmail"]
 senhas = ["1234", "2345", "3456"]
 saldo = [1000, 250, 3000]
@@ -115,12 +130,14 @@ saldo = [1000, 250, 3000]
 while (1): #Looping infinito
   repetir = True
   while repetir:
+    print(usuarios)#NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
+    print(senhas)#NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
     print("Login")
     nome_completo = input("Coloque seu nome completo: ").title()
     senha = input("Coloque sua senha: ")
 
-    if nome_completo in nomes:
-      ID = nomes.index(nome_completo) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
+    if nome_completo in usuarios:
+      ID = usuarios.index(nome_completo) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
       if senha in senhas[ID]: #CORRIGIR, se eu aperto "enter" na senha, ele aparece "Acesso autorizado"
         print("Acesso autorizado")
         primeiro_nome = nome_completo.split()
