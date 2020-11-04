@@ -1,78 +1,66 @@
-#--------------------------------------- Inicializção ----------------------------------------
+#print(" ".join(nome_completo)) #QUANDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
+#--------------------------------------- INICIO ----------------------------------------
 
-Usuarios = {1: ["Carlos Augusto", "augusto.carlos@gmail.com", "2358"], 2: ["Ana Carolina", "ana.carlo@gmail.com", "6752"], 3: ["Igor Moraes", "imoraes.raes@gmail.com", "1374"]
-}
+usuarios = ["Ana Lima", "Davi Reis", "Diego Jota"]
+e_mails = ["a_lima@gmail", "davi&rei@gmail", "ego&jota@gmail"]
+senhas = ["1234", "2345", "3456"]
+saldo = [1000, 250, 3000]
+#-------------------------------------- ABERTURA ---------------------------------------
 
-Contas = {
-    1: [1000],
-    2: [250],
-    3: [3000]
-}  ##Colocar aqui os valores nas contas das pessoas
-
-print("Olá")
-print("Em que posso ajudá-lo hoje?")
+print("Olá!")
+print("Em que posso ajudá-lo hoje?\n")
 
 programa = True
 while programa:
-
+  
+  continuar_1 = True
+  while continuar_1:
     print("Para adicionar usuário - Digite 1")
     print("Para realizar transações - Digite 2")
     print("Para sair - Digite sair")
-
-    continuar_1 = True
     opcao = 0
+    opcao = input("Opção: ") #CORRIGIR   
+    if opcao == "1": #CADASTRO DE PESSOAS NOVAS
+      continuar_2 = True
+      while continuar_2:
+        nome_completo = (input("\nVamos começar pelo seu nome, qual seu nome completo? ").title()).split()
+        print("Olá", nome_completo[0].title())
+        e_mail = input("Agora digite seu e-mail: ") #CORRIGIR  
+        print("Estamos quase lá")
+        senha = input("Digite uma senha: ") #CORRIGIR  
 
-    while continuar_1:
-        opcao = input("Opção: ")    
-        if opcao == "1":
-#------------------------------- CADASTRO DE PESSOAS NOVAS ----------------------------------------------------          
-            continuar_2 = True
-            while continuar_2:
+        usuarios.append(" ".join(nome_completo))
+        e_mails.append(e_mail)
+        senhas.append(senha)
+        valor = int(input("Insira um valor inicial: "))
+        saldo.append(valor)
 
-                nome_completo = (input(
-                    "\nVamos começar pelo seu nome, qual seu nome completo? ").
-                                 title()).split()
-                print("Olá", nome_completo[0].title())
+        print("\nUsuários") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
+        print(usuarios) #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
 
-                e_mail = input("Agora digite seu e-mail: ")
+        print("\nE-mails") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
+        print(e_mails) #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
 
-                print("Estamos quase lá")
+        print("\nSenhas") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
+        print(senhas) #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
 
-                senha = input("Digite uma senha: ")
+        print("\nSaldos") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
+        print(saldo) #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
 
-                cliente = []
-                ID = len(Usuarios) + 1
-                cliente.append(" ".join(nome_completo))
-                cliente.append(e_mail)
-                cliente.append(senha)
-                valor = [int(input("Insira um valor inicial: "))]
-                Usuarios[ID] = cliente
-                Contas[ID] = valor
-                print("\nUsuários")
-                print("----------------------------------------------------------------------------")
-                print(Usuarios)
-                print("\nContas")
-                print("----------------------------------------------------------------------------")
-                print(Contas)
-                #print(" ".join(nome_completo)) #QUANDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
+        continuar_2 = input("\nAdicionar mais algúem? (S/N)").upper() == "S"
+      continuar_1 = False
 
-                continuar_2 = input("\nAdicionar mais algúem? (s/n)") == "s"
-            continuar_1 = False
-#---------------------------------------------------------------------------------------------------------
-        elif opcao == "2":
-            print("entrando") #ENTRA EM TRANSAÇÕES (ETAPA FEITA EM "Thegiant.py")
-            continuar_1 = False
+    elif opcao == "2": #ENTRA EM TRANSAÇÕES (ETAPA FEITA EM "aPrincipal.py")
+      print("entrando")
+      continuar_1 = False
 
-        elif opcao == "sair":
-            print("Até breve") #SAI DO PROGRAMA TODO
-            continuar_1 = False
-            programa = False
+    elif opcao == "sair":
+      print("Até breve") #SAI DO PROGRAMA TODO
+      continuar_1 = False
+      programa = False
 
-        else:
-            print("Opção inválida, tente novamente")
+    else:
+      print("Opção inválida")
+      print("Tente novamente\n")
 
             
-            
-##Transações começa aqui--------------------------------------------------------------------------
-
-    
