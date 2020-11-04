@@ -1,6 +1,4 @@
-#------------------------------------------- CASO 1 -------------------------------------------
-#------------------------------------- AQUI É PARA PAGAR --------------------------------------
-
+#------------------------------------- CASO 1: PAGAMENTO --------------------------------------
 #EXEMPLO DE QR CODE: 0;ANA;500;3017
 
 def pagar(): 
@@ -96,8 +94,7 @@ def pagar():
 
 
 
-#------------------------------------------- CASO 2 -------------------------------------------
-#----------------------------- AQUI É PARA RECEBER (GERAR QR CODE) ----------------------------
+#-------------------------------------- CASO 2: RECEBIMENTO -----------------------------------
 
 def receber():
   
@@ -126,12 +123,12 @@ e_mails = ["a_lima@gmail", "davi&rei@gmail", "ego&jota@gmail"]
 senhas = ["1234", "2345", "3456"]
 saldo = [1000, 250, 3000]
 
-#------------------------------------------ ACESSO --------------------------------------------
+#---------------------------------------- TRANSAÇÕES -------------------------------------------
 while (1): #Looping infinito
   repetir = True
   while repetir:
-    print(usuarios)#NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
-    print(senhas)#NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
+    print(usuarios) #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
+    print(senhas) #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
     print("Login")
     nome_completo = input("Coloque seu nome completo: ").title()
     senha = input("Coloque sua senha: ")
@@ -163,11 +160,11 @@ while (1): #Looping infinito
     escolha = input("Opção: ").upper()
 
     if escolha == "P":
-      print("Você escolheu a opção Pagamento") #(CASO 1)
+      print("Você escolheu a opção Pagamento") #(CASO 1: PAGAMENTO)
       pagar()
       PR = False
     elif escolha == "R":
-      print("Você escolheu a opção Receber") #(CASO 2)
+      print("Você escolheu a opção Receber") #(CASO 2: RECEBIMENTO)
       receber()
       PR = False
     elif escolha == "VOLTAR":
