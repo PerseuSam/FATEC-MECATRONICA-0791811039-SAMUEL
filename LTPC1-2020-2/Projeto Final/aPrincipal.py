@@ -86,11 +86,18 @@ def pagar():
 
 def receber():
   
-  valor = int(input("Gerar QR Code de qual valor? ")) #CORRIGIR, se apertar só "enter" ou tiver letras da crash
+  verificaNumero = True
+  while verificaNumero:
+    valor = input("Gerar QR Code de qual valor? ")
+    if valor.isdigit():
+      valor = int(valor)
+      verificaNumero = False
+    else:
+      print("Algo errado")
+      print("Tente novamente")
+
   import random
   n_aleatorio = (random.randrange(1000, 9999))
-
-  print("Seu QR Code é:", ID,";", primeiro_nome[0].upper(),";", valor,";", n_aleatorio, "\n")
   print("Seu QR Code é: {};{};{};{}".format(ID, primeiro_nome[0].upper(), valor, n_aleatorio), "\n")
 
 
