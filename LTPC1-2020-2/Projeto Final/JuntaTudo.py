@@ -6,7 +6,7 @@ def cria_conta():
 
   continuar_2 = True
   while continuar_2:
-    nome_completo = (input("\nVamos começar pelo seu nome, qual seu nome completo? ").title()).split()
+    nome_completo = (input("\nVamos começar pelo seu nome, qual seu nome completo? ").title()).split() #CORRIGIR 
     print("Olá", nome_completo[0].title())
     e_mail = input("Agora digite seu e-mail: ") #CORRIGIR  
     print("Estamos quase lá")
@@ -141,7 +141,7 @@ def transacao():
           repete_pagar = False
         else:
           print("Saldo insuficiente")
-          print("Seu saldo é de: R$ ",saldo[ID])
+          print("Seu saldo é de: R$ ",saldo[ID], "\n")
           saldo_zero = True
           while saldo_zero:
             print("Tentar novamente ou sair?")
@@ -172,10 +172,10 @@ def transacao():
           print("Algo errado")
           print("Tente novamente")
 
-        import random
-        n_aleatorio = (random.randrange(1000, 9999))
-        print("Seu QR Code é: {};{};{};{}".format(ID, primeiro_nome[0].upper(), valor, n_aleatorio), "\n")
-        PR = False
+      import random
+      n_aleatorio = (random.randrange(1000, 9999))
+      print("Seu QR Code é: {};{};{};{}".format(ID, primeiro_nome[0].upper(), valor, n_aleatorio), "\n")
+      PR = False
 
     elif escolha == "VOLTAR":
       print("Você escolheu a opção voltar\n") 
