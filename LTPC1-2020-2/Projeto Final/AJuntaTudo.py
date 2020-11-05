@@ -1,4 +1,6 @@
+#CAÇAR ERROS, ANOTAR TODOS E DEPOIS CORRIGIR
 #print(" ".join(nome_completo)) #QUANDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
+
 
 #---------------------------------- 1) CRIAR CONTA -------------------------------------
 
@@ -122,44 +124,42 @@ def transacao():
               valor_QR = int(QR_code[(segunda_posicao+1) : terceira_posicao])
           posicao = posicao + 1
 
-        malandragem = True
-        while malandragem:
-          if recebedor.title() == nome_completo.title() or primeiro_nome[0].upper() != recebedor_QR.upper() or ID_recebedor != ID_QR:
-            print("Algo deu errado")
-            print("Tente novamente")
-          elif valor != valor_QR:
-            print("Valor informado diferente do QR Code")
-            print("Tente novamente")
-          else:
-            posicao_recebedor = usuarios.index(recebedor) 
-            malandragem = False
-          
-        if (saldo[ID] - valor) >= 0:
-          saldo[ID] -= valor
-          saldo[posicao_recebedor] += valor
-          print("\nTransação efetuada")
-          print("Seu saldo atual é: R$", saldo[ID])
-          print("Saldo de todos os clientes:", saldo, "\n") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
-          repete_pagar = False
+        if recebedor.title() == nome_completo.title() or primeiro_nome[0].upper() != recebedor_QR.upper() or ID_recebedor != ID_QR:
+          print("Algo deu errado")
+          print("Tente novamente")
+        elif valor != valor_QR:
+          print("Valor informado diferente do QR Code")
+          print("Tente novamente")
         else:
-          print("Saldo insuficiente")
-          print("Seu saldo é de: R$ ",saldo[ID], "\n")
-          saldo_zero = True
-          while saldo_zero:
-            print("Tentar novamente ou sair?")
-            print("Para Tentar Novamente - Digite 'T'")
-            print("Para voltar - Digite 'VOLTAR'")
-            decisao = 0
-            decisao = input("Opção: ").upper()
-            if decisao == "T":
-              saldo_zero = False
-              repete_pagar = True
-            elif decisao == "VOLTAR":
-              saldo_zero = False
-              repete_pagar = False
-            else:
-              print("Escolha Inválida")
-              print("Tente Novamente\n")
+          repete_pagar = False
+          posicao_recebedor = usuarios.index(recebedor) 
+          
+      if (saldo[ID] - valor) >= 0:
+        saldo[ID] -= valor
+        saldo[posicao_recebedor] += valor
+        print("\nTransação efetuada")
+        print("Seu saldo atual é: R$", saldo[ID])
+        print("Saldo de todos os clientes:", saldo, "\n") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
+        repete_pagar = False
+      else:
+        print("Saldo insuficiente")
+        print("Seu saldo é de: R$ ",saldo[ID], "\n")
+        saldo_zero = True
+        while saldo_zero:
+          print("Tentar novamente ou sair?")
+          print("Para Tentar Novamente - Digite 'T'")
+          print("Para voltar - Digite 'VOLTAR'")
+          decisao = 0
+          decisao = input("Opção: ").upper()
+          if decisao == "T":
+            saldo_zero = False
+            repete_pagar = True
+          elif decisao == "VOLTAR":
+            saldo_zero = False
+            repete_pagar = False
+          else:
+            print("Escolha Inválida")
+            print("Tente Novamente\n")
       PR = False
 
     elif escolha == "R":
