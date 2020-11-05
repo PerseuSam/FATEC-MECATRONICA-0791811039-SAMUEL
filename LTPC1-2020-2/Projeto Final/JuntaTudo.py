@@ -122,15 +122,17 @@ def transacao():
               valor_QR = int(QR_code[(segunda_posicao+1) : terceira_posicao])
           posicao = posicao + 1
 
-
-        if recebedor == nome_completo or primeiro_nome[0].upper() != recebedor_QR.upper() or ID_recebedor != ID_QR:
-          print("Algo deu errado")
-          print("Tente novamente")
-        elif valor != valor_QR:
-          print("Valor informado diferente do QR Code")
-          print("Tente novamente")
-        else:
-          posicao_recebedor = usuarios.index(recebedor) 
+        malandragem = True
+        while malandragem:
+          if recebedor.title() == nome_completo.title() or primeiro_nome[0].upper() != recebedor_QR.upper() or ID_recebedor != ID_QR:
+            print("Algo deu errado")
+            print("Tente novamente")
+          elif valor != valor_QR:
+            print("Valor informado diferente do QR Code")
+            print("Tente novamente")
+          else:
+            posicao_recebedor = usuarios.index(recebedor) 
+            malandragem = False
           
         if (saldo[ID] - valor) >= 0:
           saldo[ID] -= valor
