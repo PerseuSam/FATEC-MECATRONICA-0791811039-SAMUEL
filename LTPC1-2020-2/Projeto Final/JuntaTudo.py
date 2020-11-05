@@ -143,21 +143,21 @@ def transacao():
           print("Saldo insuficiente")
           print("Seu saldo é de: R$ ",saldo[ID])
           saldo_zero = True
-        while saldo_zero:
-          print("Tentar novamente ou sair?")
-          print("Para Tentar Novamente - Digite 'T'")
-          print("Para sair - Digite 'SAIR'")
-          decisao = 0
-          decisao = input("Opção: ").upper()
-          if decisao == "T":
-            saldo_zero = False
-            repete_pagar = True
-          elif decisao == "SAIR":
-            saldo_zero = False
-            repete_pagar = False
-          else:
-            print("Escolha Inválida")
-            print("Tente Novamente\n")
+          while saldo_zero:
+            print("Tentar novamente ou sair?")
+            print("Para Tentar Novamente - Digite 'T'")
+            print("Para voltar - Digite 'VOLTAR'")
+            decisao = 0
+            decisao = input("Opção: ").upper()
+            if decisao == "T":
+              saldo_zero = False
+              repete_pagar = True
+            elif decisao == "VOLTAR":
+              saldo_zero = False
+              repete_pagar = False
+            else:
+              print("Escolha Inválida")
+              print("Tente Novamente\n")
       PR = False
 
     elif escolha == "R":
