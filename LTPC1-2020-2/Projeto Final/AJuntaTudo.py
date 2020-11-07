@@ -81,8 +81,8 @@ def transacao():
     escolha = 0
     escolha = input("Opção: ").upper()
 
-    if escolha == "P":
-      print("Você escolheu a opção Pagamento") #(CASO 1: PAGAMENTO)
+    if escolha == "P": #(CASO 1: PAGAMENTO)
+      print("Você escolheu a opção Pagamento") 
       repete_pagar = True
       while repete_pagar:
         verificaNome = True
@@ -158,22 +158,20 @@ def transacao():
         print("Seu saldo é de: R$ ",saldo[ID], "\n")
         repete_pagar = False
 
-    elif escolha == "R":
-      print("Você escolheu a opção Receber") #(CASO 2: RECEBIMENTO)
+    elif escolha == "R": #(CASO 2: RECEBIMENTO)
+      print("Você escolheu a opção Receber") 
       verificaNumero = True
       while verificaNumero:
         valor = input("\nGerar QR Code de qual valor? ")
         if valor.isdigit():
           valor = int(valor)
+          import random
+          n_aleatorio = (random.randrange(1000, 9999))
+          print("Seu QR Code é: {};{};{};{}".format(ID, primeiro_nome[0].upper(), valor, n_aleatorio), "\n") 
           verificaNumero = False
         else:
           print("Algo errado")
           print("Tente novamente")
-
-      import random
-      n_aleatorio = (random.randrange(1000, 9999))
-      print("Seu QR Code é: {};{};{};{}".format(ID, primeiro_nome[0].upper(), valor, n_aleatorio), "\n")
-      PR = False
 
     elif escolha == "VOLTAR":
       print("Você escolheu a opção voltar\n") 
