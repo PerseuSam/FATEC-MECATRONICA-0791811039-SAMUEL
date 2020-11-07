@@ -17,7 +17,7 @@ def cria_conta():
     usuarios.append(" ".join(nome_completo))
     e_mails.append(e_mail)
     senhas.append(senha)
-    valor = int(input("Insira um valor inicial: "))
+    valor = int(input("Insira um valor inicial: ")) #CORRIGIR 
     saldo.append(valor)
 
     print("\nUsuários") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
@@ -32,7 +32,7 @@ def cria_conta():
     print("\nSaldos") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
     print(saldo) #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
 
-    continuar_2 = input("\nAdicionar mais algúem? (S/N)").upper() == "S"
+    continuar_2 = input("\nAdicionar mais algúem? (S/N)").upper() == "S" #CORRIGIR 
 
 
 
