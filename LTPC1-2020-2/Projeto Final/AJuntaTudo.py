@@ -141,26 +141,12 @@ def transacao():
         print("Seu saldo atual é: R$", saldo[ID])
         print("Saldo de todos os clientes:", saldo, "\n") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
         repete_pagar = False
+        PR = False
       else:
         print("Saldo insuficiente")
         print("Seu saldo é de: R$ ",saldo[ID], "\n")
-        saldo_zero = True
-        while saldo_zero:
-          print("Tentar novamente ou sair?")
-          print("Para Tentar Novamente - Digite 'T'")
-          print("Para voltar - Digite 'VOLTAR'")
-          decisao = 0
-          decisao = input("Opção: ").upper()
-          if decisao == "T":
-            saldo_zero = False
-            repete_pagar = True
-          elif decisao == "VOLTAR":
-            saldo_zero = False
-            repete_pagar = False
-          else:
-            print("Escolha Inválida")
-            print("Tente Novamente\n")
-      PR = False
+        saldo_zero = False
+        repete_pagar = False
 
     elif escolha == "R":
       print("Você escolheu a opção Receber") #(CASO 2: RECEBIMENTO)
