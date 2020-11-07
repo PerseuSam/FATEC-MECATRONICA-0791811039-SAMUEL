@@ -134,7 +134,8 @@ def transacao():
               valor_QR = int(QR_code[(segunda_posicao+1) : terceira_posicao])
           posicao = posicao + 1
 
-        if recebedor.title() == nome_completo.title() or primeiro_nome[0].upper() != recebedor_QR.upper() or ID_recebedor != ID_QR: #TALVEZ COLOCAR UM "ELIF" PARA CADA ERRO, EXPLICANDO O QUE TEM DE ERRADO
+        #TALVEZ COLOCAR UM "ELIF" PARA CADA ERRO, EXPLICANDO O QUE TEM DE ERRADO
+        if recebedor.title() == nome_completo.title() or primeiro_nome[0].upper() != recebedor_QR.upper() or ID_recebedor != ID_QR:
           print("Algo deu errado")
           print("Tente novamente")
         elif valor != valor_QR:
@@ -155,7 +156,6 @@ def transacao():
       else:
         print("Saldo insuficiente")
         print("Seu saldo é de: R$ ",saldo[ID], "\n")
-        saldo_zero = False
         repete_pagar = False
 
     elif escolha == "R":
