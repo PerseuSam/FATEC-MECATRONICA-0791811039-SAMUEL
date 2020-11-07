@@ -12,7 +12,7 @@ def cria_conta():
     print("Olá", nome_completo[0].title())
     e_mail = input("Agora digite seu e-mail: ") #CORRIGIR  
     print("Estamos quase lá")
-    senha = input("Digite uma senha: ") #CORRIGIR  
+    senha = input("Digite uma senha: ") #CORRIGIR_entrada #CORRIGIR_se já houver a senha digitada, pedir outra senha  
 
     usuarios.append(" ".join(nome_completo))
     e_mails.append(e_mail)
@@ -32,7 +32,7 @@ def cria_conta():
     print("\nSaldos") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
     print(saldo) #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
 
-    continuar_2 = input("\nAdicionar mais algúem? (S/N)").upper() == "S" #CORRIGIR 
+    continuar_2 = input("\nAdicionar mais algúem? (S/N)").upper() == "S" 
 
 
 
@@ -124,7 +124,7 @@ def transacao():
               valor_QR = int(QR_code[(segunda_posicao+1) : terceira_posicao])
           posicao = posicao + 1
 
-        if recebedor.title() == nome_completo.title() or primeiro_nome[0].upper() != recebedor_QR.upper() or ID_recebedor != ID_QR:
+        if recebedor.title() == nome_completo.title() or primeiro_nome[0].upper() != recebedor_QR.upper() or ID_recebedor != ID_QR: #TALVEZ COLOCAR UM "ELIF" PARA CADA ERRO, EXPLICANDO O QUE TEM DE ERRADO
           print("Algo deu errado")
           print("Tente novamente")
         elif valor != valor_QR:
@@ -197,7 +197,7 @@ while programa_completo:
     print("Para realizar transações - Digite 2")
     print("Para sair - Digite sair")
     opcao = 0
-    opcao = input("Opção: ") #CORRIGIR   
+    opcao = input("Opção: ").upper()  
     if opcao == "1": #CADASTRO DE PESSOAS NOVAS
       cria_conta()
       continuar_1 = False
@@ -206,7 +206,7 @@ while programa_completo:
       transacao()
       continuar_1 = False
 
-    elif opcao == "sair":
+    elif opcao == "SAIR":
       print("Até breve") #SAI DO PROGRAMA TODO
       continuar_1 = False
       programa_completo = False
