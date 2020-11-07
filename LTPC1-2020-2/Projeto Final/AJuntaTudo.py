@@ -62,7 +62,7 @@ def transacao():
     senha = input("Coloque sua senha: ")
 
     if nome_completo in usuarios:
-      ID = usuarios.index(nome_completo) # MOSTRA A POSIÇÃO DA PALAVRA DENTRO DA LISTA
+      ID = usuarios.index(nome_completo)
       if senha in senhas[ID]: #CORRIGIR, se eu aperto "enter" na senha, ele aparece "Acesso autorizado"
         print("Acesso autorizado")
         primeiro_nome = nome_completo.split()
@@ -107,7 +107,7 @@ def transacao():
             print("Algo errado")
             print("Tente novamente")
 
-        QR_code = input("Insira o QR Code: ") #CORRIGIR?, se digita algo dierente do QR Code, da crash
+        QR_code = input("Insira o QR Code: ") #CORRIGIR, se digita algo dierente do QR Code, da crash
 
         ID_recebedor = usuarios.index(recebedor)
         primeiro_nome = recebedor.split()
@@ -137,7 +137,6 @@ def transacao():
               valor_QR = int(QR_code[(segunda_posicao+1) : terceira_posicao])
           posicao = posicao + 1
 
-        #TALVEZ COLOCAR UM "ELIF" PARA CADA ERRO, EXPLICANDO O QUE TEM DE ERRADO
         if recebedor.title() == nome_completo.title() or primeiro_nome[0].upper() != recebedor_QR.upper() or ID_recebedor != ID_QR:
           print("Algo deu errado")
           print("Tente novamente")
