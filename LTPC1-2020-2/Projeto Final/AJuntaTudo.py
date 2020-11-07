@@ -1,18 +1,21 @@
-#CAÇAR ERROS, ANOTAR TODOS E DEPOIS CORRIGIR
-#print(" ".join(nome_completo)) #QUANDO PRECISAR MOSTAR O NOME INTEIRO SEM SEPARAÇÃO
-
-
 #---------------------------------- 1) CRIAR CONTA -------------------------------------
 
 def cria_conta():
 
   continuar_2 = True
   while continuar_2:
-    nome_completo = (input("\nVamos começar pelo seu nome, qual seu nome completo? ").title()).split() #CORRIGIR_erro de entrada 
+    nome_completo = (input("\nVamos começar pelo seu nome, qual seu nome completo? ").title()).split() 
     print("Olá", nome_completo[0].title())
-    e_mail = input("Agora digite seu e-mail: ") #CORRIGIR_erro de entrada  
+    e_mail = input("Agora digite seu e-mail: ")  
     print("Estamos quase lá")
-    senha = input("Digite uma senha: ") #CORRIGIR_erro de entrada #CORRIGIR_se já houver a senha digitada, pedir outra senha  
+
+    senha_igual = True
+    while senha_igual:
+      senha = input("Digite uma senha: ")  
+      if senha in senhas:
+        print("Digite uma senha diferente\n")
+      else:
+        senha_igual = False
 
     usuarios.append(" ".join(nome_completo))
     e_mails.append(e_mail)
