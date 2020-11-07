@@ -17,7 +17,17 @@ def cria_conta():
     usuarios.append(" ".join(nome_completo))
     e_mails.append(e_mail)
     senhas.append(senha)
-    valor = int(input("Insira um valor inicial: ")) #CORRIGIR_erro de entrada 
+    
+    verificaValor = True
+    while verificaValor:
+        valor = input("Insira um valor inicial: ")
+        if valor.isdigit():
+            valor = int(valor)
+            verificaValor = False
+        else:
+            print("Algo errado")
+            print("Tente novamente\n")
+    
     saldo.append(valor)
 
     print("\nUsuários") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
