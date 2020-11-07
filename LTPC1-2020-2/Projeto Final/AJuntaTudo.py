@@ -8,16 +8,16 @@ def cria_conta():
 
   continuar_2 = True
   while continuar_2:
-    nome_completo = (input("\nVamos começar pelo seu nome, qual seu nome completo? ").title()).split() #CORRIGIR 
+    nome_completo = (input("\nVamos começar pelo seu nome, qual seu nome completo? ").title()).split() #CORRIGIR_erro de entrada 
     print("Olá", nome_completo[0].title())
-    e_mail = input("Agora digite seu e-mail: ") #CORRIGIR  
+    e_mail = input("Agora digite seu e-mail: ") #CORRIGIR_erro de entrada  
     print("Estamos quase lá")
-    senha = input("Digite uma senha: ") #CORRIGIR_entrada #CORRIGIR_se já houver a senha digitada, pedir outra senha  
+    senha = input("Digite uma senha: ") #CORRIGIR_erro de entrada #CORRIGIR_se já houver a senha digitada, pedir outra senha  
 
     usuarios.append(" ".join(nome_completo))
     e_mails.append(e_mail)
     senhas.append(senha)
-    valor = int(input("Insira um valor inicial: ")) #CORRIGIR 
+    valor = int(input("Insira um valor inicial: ")) #CORRIGIR_erro de entrada 
     saldo.append(valor)
 
     print("\nUsuários") #NÃO MOSTRAR PARA O USUÁRIO, SOMENTE PARA TESTE
