@@ -22,6 +22,6 @@ int main(void) {
       valor_final = produto * 1.2;
       break;
   }
-  printf("Valor final: R$%f\n", valor_final);
+  printf("Valor final: R$%2f\n", valor_final);
   return 0;
 }
