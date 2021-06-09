@@ -1,0 +1,36 @@
+#define SAIDA_1 14
+#define SAIDA_1_LIGADA 0
+#define SAIDA_1_DESLIGADA 1
+#define ENTRADA_1 5
+#define ENTRADA_2 4
+
+void inicializa_hardware(){
+pinMode(SAIDA_1, OUTPUT);
+digitalWrite(SAIDA_1, SAIDA_1_DESLIGADA);
+pinMode(ENTRADA_1, INPUT_PULLUP);
+pinMode(ENTRADA_2, INPUT_PULLUP);
+}
+
+
+ICACHE_RAM_ATTR void desliga_SAIDA_1_int(){
+  if(digitalRead(ENTRADA_2) == 0){
+  	digitalWrite(SAIDA_1, SAIDA_1_DESLIGADA);
+  }
+}
+  
+void inicializa_interrupcao(){
+  attachInterrupt(digitalPinToInterrupt(ENTRADA_2), desliga_SAIDA_1_int, FALLING);
+}
+
+void setup() {
+  inicializa_hardware();
+  inicializa_interrupcao();
+}
+
+void loop() {
+  if(digitalRead(ENTRADA_1) == 0){
+  	digitalWrite(SAIDA_1, SAIDA_1_LIGADA);
+    	delay(2000);
+	digitalWrite(SAIDA_1, SAIDA_1_DESLIGADA);
+  }
+}
