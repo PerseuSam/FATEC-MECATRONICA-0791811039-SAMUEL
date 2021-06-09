@@ -1,0 +1,43 @@
+#define LED1 14
+#define LED2 12
+#define LED_LIGADO 0
+#define LED_DESLIGADO 1
+#define BOTAO1 5
+#define BOTAO2 4
+
+void inicializa_hardware(){
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
+  digitalWrite(LED1, LED_DESLIGADO);
+  digitalWrite(LED2, LED_DESLIGADO);
+  pinMode(BOTAO1, INPUT_PULLUP);
+  pinMode(BOTAO2, INPUT_PULLUP);
+}
+
+ICACHE_RAM_ATTR void liga_led_int(){
+  if(digitalRead(BOTAO1) == 0 && digitalRead(BOTAO2) == 1){
+  	digitalWrite(LED2, LED_LIGADO);
+  }
+}
+
+ICACHE_RAM_ATTR void desliga_led_int(){
+  if(digitalRead(BOTAO2) == 0 && digitalRead(BOTAO1) == 1){
+  	digitalWrite(LED2, LED_DESLIGADO);
+  }
+}
+  
+void inicializa_interrupcoes(){
+  attachInterrupt(digitalPinToInterrupt(BOTAO1), liga_led_int, FALLING);
+  attachInterrupt(digitalPinToInterrupt(BOTAO2), desliga_led_int, FALLING);
+
+}
+
+void setup() {
+  inicializa_hardware();
+  inicializa_interrupcoes();
+}
+
+void loop() {
+  digitalWrite(LED1, !digitalRead(LED1));
+  delay(500);
+}
