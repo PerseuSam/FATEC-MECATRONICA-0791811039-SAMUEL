@@ -1,0 +1,76 @@
+#define SAIDA_1 14
+#define SAIDA_2 13
+#define SAIDA_3 12
+#define SAIDA_1_LIGADO 0
+#define SAIDA_1_DESLIGADO 1
+#define SAIDA_2_LIGADO 0
+#define SAIDA_2_DESLIGADO 1
+#define SAIDA_3_LIGADO 0
+#define SAIDA_3_DESLIGADO 1
+#define ENTRADA_1 5
+
+int pulso;
+
+void inicializa_hardware(){
+pinMode(SAIDA_1, OUTPUT);
+pinMode(SAIDA_2, OUTPUT);
+pinMode(SAIDA_3, OUTPUT);
+digitalWrite(SAIDA_1, SAIDA_1_DESLIGADA);
+digitalWrite(SAIDA_2, SAIDA_2_DESLIGADA);
+digitalWrite(SAIDA_3, SAIDA_3_DESLIGADA);
+pinMode(ENTRADA_1, INPUT_PULLUP);
+}
+
+long tempo;
+
+ICACHE_RAM_ATTR void passo_0_int(){
+  if(digitalRead(ENTRADA_1) == 0 && pulso == 0){
+  	digitalWrite(SAIDA_2, SAIDA_2_LIGADA);
+	pulso = pulso + 1;
+  }
+}
+
+ICACHE_RAM_ATTR void passo_1_int(){
+  if(digitalRead(ENTRADA_1) == 0 && pulso == 1){
+	digitalWrite(SAIDA_2, SAIDA_2_DESLIGADA);
+  	digitalWrite(SAIDA_3, SAIDA_3_LIGADA);
+	pulso = pulso + 1;
+  }
+}
+
+ICACHE_RAM_ATTR void passo_2_int(){
+  if(digitalRead(ENTRADA_1) == 0 && pulso == 2){
+  	digitalWrite(SAIDA_2, SAIDA_2_LIGADA);
+	pulso = pulso + 1;
+  }
+}
+
+ICACHE_RAM_ATTR void passo_3_int(){
+  if(digitalRead(ENTRADA_1) == 0 && pulso == 3){
+	digitalWrite(SAIDA_2, SAIDA_2_DESLIGADA);
+	digitalWrite(SAIDA_3, SAIDA_3_DESLIGADA);
+	pulso = 0;
+  }
+}
+
+void inicializa_interrupcoes(){
+  attachInterrupt(digitalPinToInterrupt(ENTRADA_1), passo_0_int, FALLING);
+  attachInterrupt(digitalPinToInterrupt(ENTRADA_1), passo_1_int, FALLING);
+  attachInterrupt(digitalPinToInterrupt(ENTRADA_1), passo_2_int, FALLING);
+  attachInterrupt(digitalPinToInterrupt(ENTRADA_1), passo_3_int, FALLING);
+
+}
+
+void setup() {
+  inicializa_hardware();
+  inicializa_interrupcoes();
+  tempo = millis();
+  pulso = 0;
+}
+
+void loop() { 	
+  if(millis() - tempo >= 500){
+    tempo = millis();
+    digitalWrite(SAIDA_1, !digitalRead(SAIDA_1));
+  }
+}
