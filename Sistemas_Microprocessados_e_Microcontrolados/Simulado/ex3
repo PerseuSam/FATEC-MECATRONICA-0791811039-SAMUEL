@@ -1,0 +1,18 @@
+#define LED 14
+#define LED_LIGADO 0
+#define LED_DESLIGADO 1
+
+void inicializa_hardware(){
+  pinMode(LED, OUTPUT);
+  digitalWrite(LED, LED_DESLIGADO);
+}
+
+
+void setup() {
+  inicializa_hardware();
+}
+
+void loop() {
+  digitalWrite(LED, !digitalRead(LED));
+  delay(500);
+}
